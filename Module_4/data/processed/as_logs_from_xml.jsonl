@@ -1,0 +1,3 @@
+{"ticket_id": "AS-3001", "service_type": "ac", "status_code": 200, "note": "ok", "source": "xml"}
+{"ticket_id": "AS-3002", "service_type": "washer", "status_code": 500, "note": "call +82-10-5555-6666", "source": "xml"}
+{"ticket_id": "AS-3003", "service_type": "fridge", "status_code": 404, "note": "email support@sample.com", "source": "xml"}

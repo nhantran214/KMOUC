@@ -1,0 +1,5 @@
+<logs>
+  <log><ticket_id>AS-3001</ticket_id><service_type>ac</service_type><status_code>200</status_code><note>ok</note></log>
+  <log><ticket_id>AS-3002</ticket_id><service_type>washer</service_type><status_code>500</status_code><note>call +82-10-5555-6666</note></log>
+  <log><ticket_id>AS-3003</ticket_id><service_type>fridge</service_type><status_code>404</status_code><note>email support@sample.com</note></log>
+</logs>

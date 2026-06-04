@@ -1,0 +1,31 @@
+DBpedia Downloaded Sample for Knowledge Graph Extraction
+
+Source note:
+The entries below are derived from DBpedia pages and simplified for classroom use.
+Original sources:
+- https://dbpedia.org/page/Port_of_Rotterdam
+- https://dbpedia.org/page/Maersk
+- https://dbpedia.org/page/Panama_Canal
+- https://dbpedia.org/page/Suez_Canal
+- https://dbpedia.org/page/Busan_Port
+
+[1] Port of Rotterdam
+The Port of Rotterdam is the largest port in Europe and is located in Rotterdam, Netherlands. It is managed by the Port of Rotterdam Authority and serves as a major gateway for logistics and maritime trade in Europe.
+
+[2] Maersk
+Maersk is a Danish shipping conglomerate headquartered in Copenhagen, Denmark. It operates global container shipping and logistics services and frequently connects with major international ports.
+
+[3] Panama Canal
+The Panama Canal is a large artificial canal in Panama that connects the Atlantic Ocean and the Pacific Ocean. It is a critical infrastructure corridor for global maritime transportation.
+
+[4] Suez Canal
+The Suez Canal is an artificial sea-level waterway in Egypt connecting the Mediterranean Sea and the Red Sea. It is one of the most important routes for international shipping between Europe and Asia.
+
+[5] Port of Busan
+The Port of Busan is a major sea port in South Korea. It handles large container throughput and operates as a key hub for Northeast Asian maritime trade.
+
+[6] Cross-document context
+Maersk vessels and other global carriers use strategic chokepoints such as the Panama Canal and Suez Canal to optimize intercontinental shipping routes.
+
+[7] Network context
+Major ports such as Rotterdam and Busan are integrated with inland logistics systems, supporting multimodal freight flows between seaborne and land transportation networks.

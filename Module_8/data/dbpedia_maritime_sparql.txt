@@ -1,0 +1,4 @@
+DBpedia Maritime SPARQL Corpus — Module 8
+
+Downloaded via DBpedia SPARQL endpoint (0 entities).
+License: CC BY-SA (DBpedia / Wikipedia).

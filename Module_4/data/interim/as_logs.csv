@@ -1,0 +1,7 @@
+timestamp,ticket_id,service_type,status_code,status_label,client_ip,event_text_normalized
+2026-04-15 08:31:20+00:00,AS-1001,air_conditioner,200,success,203.0.113.10,ticket=AS-1001 | service=air_conditioner | status=success
+2026-04-15 08:31:30+00:00,AS-1002,washing_machine,500,server_error,198.51.100.77,ticket=AS-1002 | service=washing_machine | status=server_error
+2026-04-15 08:31:31+00:00,AS-1002,washing_machine,500,server_error,198.51.100.77,ticket=AS-1002 | service=washing_machine | status=server_error
+2026-04-15 08:33:40+00:00,AS-1003,refrigerator,404,client_error,192.0.2.20,ticket=AS-1003 | service=refrigerator | status=client_error
+2026-04-15 08:34:01+00:00,AS-1003,refrigerator,200,success,192.0.2.20,ticket=AS-1003 | service=refrigerator | status=success
+2026-04-15 09:00:00+00:00,AS-1004,air_conditioner,200,success,198.51.100.90,ticket=AS-1004 | service=air_conditioner | status=success

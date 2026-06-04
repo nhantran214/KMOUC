@@ -1,0 +1,115 @@
+DBpedia Maritime / Logistics Corpus — Module 8 Knowledge Graph Lab
+
+License note: Abstracts derived from DBpedia / Wikipedia content (CC BY-SA).
+Source package: dice-group/DBpedia-Summarizer (en_100_summaries.csv) + curated maritime entries.
+
+[1] Port_of_Singapore
+The Port of Singapore is a major transshipment hub in Southeast Asia, operated by PSA International. It connects global shipping routes across Asia, Europe, and the Middle East and is one of the busiest container ports worldwide.
+
+[2] Port_of_Rotterdam
+The Port of Rotterdam is the largest seaport in Europe by cargo throughput. It is located in the Netherlands and managed by the Port of Rotterdam Authority, serving as a gateway for European logistics and inland distribution.
+
+[3] Port_of_Busan
+The Port of Busan is one of the busiest container ports in South Korea. It is managed by the Busan Port Authority and functions as a hub for Northeast Asian shipping routes.
+
+[4] Maersk
+A.P. Moller - Maersk is a Danish shipping and logistics company. It operates container shipping through Maersk Line and provides integrated logistics services worldwide.
+
+[5] Mediterranean_Shipping_Company
+Mediterranean Shipping Company (MSC) is a global container shipping line headquartered in Geneva, Switzerland. MSC operates a large fleet and serves major trade lanes connecting Asia, Europe, and the Americas.
+
+[6] Panama_Canal
+The Panama Canal is an artificial waterway in Panama connecting the Atlantic and Pacific Oceans. It is administered by the Panama Canal Authority and shortens interoceanic shipping routes.
+
+[7] Suez_Canal
+The Suez Canal is an artificial sea-level waterway in Egypt linking the Mediterranean Sea and the Red Sea. It is operated by the Suez Canal Authority and is critical for Europe–Asia maritime trade.
+
+[8] International_Maritime_Organization
+The International Maritime Organization (IMO) is a United Nations agency responsible for international shipping regulation, including safety, security, and environmental standards adopted by member states.
+
+[9] DHL
+DHL is an international logistics company providing express delivery, freight forwarding, and supply chain services. It operates hubs near major seaports and airports for multimodal transport.
+
+[10] Ship_commissioning
+Ship commissioning is the process of placing a ship in active service. It includes sea trials, crew training, and certification before a vessel enters operational duty.
+
+[11] Port_of_Shanghai
+The Port of Shanghai is a major deep-water port in China and one of the world's busiest container ports. It serves Yangtze River Delta manufacturing exports and global container trade.
+
+[12] Port_of_Los_Angeles
+The Port of Los Angeles is a seaport in San Pedro Bay, California. It handles containerized cargo, automobiles, and bulk commodities for U.S. West Coast trade.
+
+[13] Port_of_Hamburg
+The Port of Hamburg is Germany's largest seaport on the River Elbe. It is a key European hub for container, bulk, and logistics services.
+
+[14] Port_of_Antwerp
+The Port of Antwerp is one of Europe's largest seaports, located in Belgium. It specializes in container handling, chemicals, and integrated logistics.
+
+[15] Port_of_Hong_Kong
+The Port of Hong Kong is a major deep-water port in southern China. It has historically been a global transshipment and container logistics center.
+
+[16] Port_of_Dubai
+Port Jebel Ali in Dubai is the largest port in the Middle East and a major transshipment hub for global container routes.
+
+[17] CMA_CGM
+CMA CGM is a French container transportation and shipping company. It operates worldwide liner services and port-related logistics.
+
+[18] COSCO
+COSCO Shipping is a Chinese state-owned shipping and logistics company. It operates container fleets and global port investments.
+
+[19] Evergreen_Marine
+Evergreen Marine is a Taiwanese container transportation company. It operates global liner services and container vessels.
+
+[20] Hapag-Lloyd
+Hapag-Lloyd is a German international shipping and container transportation company. It serves major trade lanes worldwide.
+
+[21] FedEx
+FedEx is an American multinational delivery services company. It integrates air freight, ground logistics, and supply chain operations.
+
+[22] UPS
+United Parcel Service (UPS) is an American multinational shipping and logistics company providing parcel and freight services globally.
+
+[23] Kuehne+Nagel
+Kuehne+Nagel is a global transport and logistics company headquartered in Switzerland. It provides sea freight, air freight, and contract logistics.
+
+[24] Bosporus
+The Bosporus is a strait in Turkey connecting the Black Sea and the Sea of Marmara. It is a strategic route for oil tankers and merchant shipping.
+
+[25] Strait_of_Malacca
+The Strait of Malacca is a narrow passage between the Malay Peninsula and Sumatra. It is one of the world's most important shipping lanes for oil and trade.
+
+[26] English_Channel
+The English Channel is a body of water separating southern England from northern France. It is a major route for ferry and cargo traffic.
+
+[27] Classification_society
+A classification society is an organization that establishes and maintains standards for the construction and maintenance of ships and offshore structures.
+
+[28] Bill_of_lading
+A bill of lading is a legal document issued by a carrier to a shipper detailing the type, quantity, and destination of goods being shipped.
+
+[29] Container_ship
+A container ship is a cargo vessel designed to carry intermodal containers. Containerization revolutionized global logistics and port operations.
+
+[30] Oil_tanker
+An oil tanker is a ship designed for bulk transport of oil. Tanker routes often pass through strategic chokepoints such as the Suez and Panama canals.
+
+[31] Seventh_Amendment_to_the_United_States_Constitution
+The Seventh Amendment (Amendment VII) to the United States Constitution is part of the Bill of Rights. This amendment codifies the right to a jury trial in certain civil cases, and inhibits courts from overturning a jury's findings of fact.An early version of the Seventh Amendment was introduced in Congress in 1789 by James Madison, along with the other amendments, in response to Anti-Federalist objections to the new Constitution. Congress proposed a revised version of the Seventh Amendment to the states on September 28, 1789, and by December 15, 1791, the necessary three-quarters of the states had ratified it. Secretary of State Thomas Jefferson announced the adoption of the amendment on March 1, 1792.The Seventh Amendment is generally considered one of the more straightforward amendments of the Bill of Rights. While the Seventh Amendment's provision for jury trials in civil cases has never been incorporated (i.e., applied to the states) almost every state voluntarily complies with this requirement. The prohibition of overturning a jury's findings of fact applies to federal cases, state cases involving federal law, and to review of state cases by federal courts. United States v. Wonson (1812) established the "historical test", which interpreted the amendment as relying on English common law to determine whether a jury trial was necessary in a civil suit. The amendment thus does not guarantee trial by jury in cases under maritime law, in lawsuits against the government itself, and for many parts of patent claims. In all other cases, the jury can be waived by consent of the parties.The amendment additionally guarantees a minimum of six members for a jury in a civil trial. The amendment's twenty dollar threshold has not been the subject of much scholarly or judicial writing; that threshold remains applicable despite the inflation that has occurred since the 18th century.
+
+[32] Newlyn_School
+The Newlyn School was an art colony of artists based in or near Newlyn, a fishing village adjacent to Penzance, Cornwall, from the 1880s until the early twentieth century. The establishment of the Newlyn School was reminiscent of the Barbizon School in France, where artists fled Paris to paint in a more pure setting emphasizing natural light. These schools along with a related California movement were also known as En plein air. Newlyn had a number of things guaranteed to attract artists: fantastic light, cheap living, and the availability of inexpensive models. The artists were fascinated by the fishermen's working life at sea and the everyday life in the harbour and nearby villages. Some paintings showed the hazards and tragedy of the community's life, such as women anxiously looking out to sea as the boats go out, or a young woman crying on hearing news of a disaster. Lamorna Birch was the prime mover behind the colony and the work done there. The later Forbes School of Painting, founded by Stanhope Forbes and his wife Elizabeth in 1899, promoted the study of figure painting. A present day Newlyn School of Art was formed in 2011 with Arts Council funding providing art courses taught by many of the best-known artists working in Cornwall today. In the late nineteenth and early twentieth centuries, Lamorna, a nearby fishing village to the south, became popular with artists of the Newlyn School and is particularly associated with the artist S. J. "Lamorna" Birch who lived there from 1908.
+
+[33] Qatar_Armed_Forces
+The Qatar Armed Forces are the military forces of Qatar. The country maintains a modest military force of approximately 11,800 men, including an army (8,500), navy (1,800) and air force (1,500). Qatar's defence expenditures were a total of $1.913 billion, about 1.5% of the national GDP, as of 2010 according to the SIPRI. Qatar has recently signed defence pacts with the United States in 2002 and 2013 and with the United Kingdom, as well as with France earlier in 1994. Qatar plays an active role in the collective defence efforts of the Gulf Cooperation Council; the other five members are Saudi Arabia, Kuwait, Bahrain, the UAE, and Oman. The presence of a large American military base in the country provides the country with a guaranteed source of defence and national security. SIPRI states that Qatar's plans to transform and significantly enlarge its armed forces have accelerated in 2014, and in 2010-14 Qatar was the 46th largest arms importer in the world. Orders in 2013 for 62 tanks and 24 self-propelled guns from Germany were followed in 2014 by a number of other contracts, including 24 combat helicopters and 3 AEW aircraft from the USA, and 2 tanker aircraft from Spain.
+
+[34] Blue_Angels
+The Blue Angels is the United States Navy's flight demonstration squadron. The Blue Angels team was formed in 1946, making it the second oldest formal flying aerobatic team (under the same name) in the world, after the French Patrouille de France formed in 1931. The Blue Angels' six demonstration pilots fly the F/A-18 Hornet, typically in more than 70 shows at 34 locations throughout the United States each year, where they still employ many of the same practices and techniques used in their aerial displays in 1946. An estimated 11 million spectators view the squadron during air shows each full year. The Blue Angels also visit more than 50,000 people in a standard show season (March through November) in schools and hospitals. Since 1946, the Blue Angels have flown for more than 260 million spectators.On 1 March 2013 the U.S. Navy announced that due to sequestration actions aerial demonstration team performances including that of the Blue Angels would cease from 1 April 2013. In October 2013, Secretary of Defense Chuck Hagel, stating that "community and public outreach is a crucial Departmental activity", announced that the Blue Angels (along with the U.S. Air Force's Thunderbirds) would resume appearing at air shows starting in 2014, although the number of flyovers will continue to be severely reduced.
+
+[35] Anchor
+An anchor is a device, normally made of metal, used to connect a vessel to the bed of a body of water to prevent the craft from drifting due to wind or current. The word derives from Latin ancora, which itself comes from the Greek ἄγκυρα (ankura). Anchors can either be temporary or permanent. Permanent anchors are used in the creation of a mooring, and are rarely moved; a specialist service is normally needed to move or maintain them. Vessels carry one or more temporary anchors, which may be of different designs and weights.A sea anchor is a drogue, not in contact with the seabed, used to control a drifting vessel.
+
+[36] Miletus
+Miletus ( /maɪˈliːtəs/; Ancient Greek: Μίλητος Milētos; Hittite transcription Millawanda or Milawata ( exonyms); Latin: Miletus; Turkish: Milet) was an ancient Greek city on the western coast of Anatolia, near the mouth of the Maeander River in ancient Caria.  Its ruins are located near the modern village of Balat in Aydın Province, Turkey. Before the Persian invasion in the middle of the 6th century BC, Miletus was considered the greatest and wealthiest of Greek cities.  In other sources however it is mentioned that the city was much more modest up until the Peloponnesian War (431–404 BC), when the city state of Samos for example on the island of Samos opposite Miletus was considered a larger and more important city and harbor at the time. Miletus's greatest wealth and splendor was reached during the Hellenistic era (323–30 BC) and later Roman times. Evidence of first settlement at the site has been made inaccessible by the rise of sea level and deposition of sediments from the Maeander. The first available evidence is of the Neolithic.In the early and middle Bronze age the settlement came under Minoan influence. Legend has it that an influx of Cretans occurred displacing the indigenous Leleges. The site was renamed Miletus after a place in Crete. The Late Bronze Age, 13th century BC, saw the arrival of Luwian language speakers from south central Anatolia calling themselves the Carians. Later in that century other Greeks arrived. The city at that time rebelled against the Hittite Empire. After the fall of that empire the city was destroyed in the 12th century BC and starting about 1000 BC was resettled extensively by the Ionian Greeks. Legend offers an Ionian foundation event sponsored by a founder named Neleus from the Peloponnesus. The Greek Dark Ages were a time of Ionian settlement and consolidation in an alliance called the Ionian League. The Archaic Period of Greece began with a sudden and brilliant flash of art and philosophy on the coast of Anatolia. In the 6th century BC, Miletus was the site of origin of the Greek philosophical (and scientific) tradition, when Thales, followed by Anaximander and Anaximenes (known collectively, to modern scholars, as the Milesian School) began to speculate about the material constitution of the world, and to propose speculative naturalistic (as opposed to traditional, supernatural) explanations for various natural phenomena.Miletus is the birthplace of the Hagia Sophia's architect (and inventor of the flying buttress) Isidore of Miletus and Thales, a pre-Socratic Greek philosopher (and one of the Seven Sages of Greece) in c. 624 BC.
+
+[37] Barge
+A barge is a flat-bottomed boat, built mainly for river and canal transport of heavy goods. Some barges are not self-propelled and need to be towed or pushed by towboats. Canal barges, towed by draft animals on an adjacent towpath, contended with the railway in the early industrial revolution, but were outcompeted in the carriage of high-value items due to the higher speed, falling costs, and route flexibility of rail.

@@ -1,0 +1,1888 @@
+question,answer,contexts,ground_truth
+What method shall be used to carry out buckling strength analyses of fuel tanks subject to external pressure?,"According to the provided context, specifically page 102 of MSC 95/22/Add.1 Annex 1, the method for carrying out buckling strength analyses of fuel tanks subject to external pressure is as follows:
+
+""Buckling strength analyses of fuel tanks subject to external pressure and other loads causing compressive stresses shall be carried out in accordance with recognized standards.""
+
+Additionally, it states that ""The method shall adequately account for the difference in theoretical and actual buckling stress as a result of plate out of flatness, plate edge misalignment, straightness, ovality and deviation from true circular form over a specified arc or chord length, as relevant.""","MSC 95/22/Add.1 
+Annex 1, page 51 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+6.4.15.3.3.2 Buckling criteria shall be as follows: 
+ 
+The thickness and form of pressure vessels subject to external pressure a nd other loads 
+causing compressive stresses shall be based on calculations using accepted pressure vessel 
+buckling theory and shall adequately account for the difference in theoretical and actual 
+buckling stress as a result of plate edge misalignment, ovality and deviation from true circular 
+form over a specified arc or chord length. 
+ 
+6.4.15.3.4 Fatigue design condition 
+ 
+6.4.15.3.4.1 For type C independent tanks where the liquefied gas fuel at atmospheric 
+pressure is below minus 55°C, the Administration may  require additional verification to check 
+their compliance with 6.4.15.3.1.1, regarding static and dynamic stress depending on the tank 
+size, the configuration of the tank and arrangement of its supports and attachments.
+
+---
+
+for type A independent tanks. 
+ 
+6.4.15.2.3.2 Buckling 
+ 
+Buckling strength analyses of liquefied gas fuel tanks subjec t to external pressure and other 
+loads causing compressive stresses shall be carried out in accordance with recognized 
+standards. The method shall adequately account for the difference in theoretical and actual 
+buckling stress as a result of plate edge misalignment, lack of straightness or flatness, ovality 
+and deviation from true circular form over a specified arc or chord length, as applicable. 
+ 
+6.4.15.2.3.3 Fatigue design condition 
+ 
+6.4.15.2.3.3.1 Fatigue and crack propagation assessment shall be perform ed in 
+accordance with the provisions of 6.4.12.2. The acceptance criteria shall comply 
+with 6.4.12.2.7, 6.4.12.2.8 or 6.4.12.2.9, depending on the detectability of the defect. 
+ 
+6.4.15.2.3.3.2 Fatigue analysis shall consider construction tolerances. 
+ 
+6.4.15.2.3.3.3 Where deemed necessary by the Administration, model tests may be
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 102 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+3.2 Buckling strength analyses of fuel tanks subject to external pressure and other loads 
+causing compressive stresses shall be carried out in accordance with recognized standards. 
+The m ethod shall adequately account for the difference in theoretical and actual buckling 
+stress as a result of plate out of flatness, plate edge misalignment, straightness, ovality and 
+deviation from true circular form over a specified arc or chord length, as relevant. 
+ 
+3.3 Fatigue and crack propagation analysis shall be carried out in accordance with 
+paragraph 5.1 of this standard. 
+ 
+4 ULTIMATE LIMIT STATES 
+ 
+4.1 Structural resistance may be established by testing or by complete analysis taking 
+account of both e lastic and p lastic material properties.  Safety margins for ultimate strength 
+shall be introduced by partial factors of safety taking account of the contribution of stochastic
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 28 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+6.4.9.3 Functional loads 
+ 
+6.4.9.3.1  Loads arising from the operational use of the tank system shall be cl assified as 
+functional loads. 
+ 
+6.4.9.3.2  All functional loads that are essential for ensuring the integrity of the tank system, 
+during all design conditions, shall be considered. 
+ 
+6.4.9.3.3  As a minimum, the effects from the following criteria, as applic able, shall be 
+considered when establishing functional loads: 
+ 
+(a) internal pressure 
+ 
+(b) external pressure 
+ 
+(c) thermally induced loads 
+ 
+(d) vibration 
+ 
+(e) interaction loads 
+ 
+(f) loads associated with construction and installation 
+ 
+(g) test loads 
+ 
+(h) static heel loads 
+ 
+(i) weight of liquefied gas fuel 
+ 
+(j) sloshing 
+ 
+(k) wind impact, wave impacts and green sea effect for tanks installed on open 
+deck. 
+ 
+6.4.9.3.3.1 Internal pressure 
+ 
+.1 In all cases, including 6.4.9.3.3.1.2, P0 shall not be less than MARVS.","The buckling strength analyses of fuel tanks subject to external pressure shall be carried out in accordance with recognized standards, which adequately account for plate imperfections such as out-of-flatness and edge misalignment. This ensures that the actual buckling stress is accurately represented in the analysis."
+"What is the minimum distance between fuel tanks in a cargo ship with a volume Vc greater than or equal to 30,000 m3?","For a cargo ship with a volume Vc greater than or equal to 30,000 m3, the minimum distance between fuel tanks is 2 meters.","tanks the distance shall be measured to the bulkheads surrounding the tank 
+insulation. 
+ 
+.4 In no case shall the boundary of the fuel tank be located closer to the shell 
+plating or aft terminal of the ship than as follows: 
+ 
+.1 For passenger ships: B/10 but in no case less than 0.8 m. However, 
+this distance need not be greater than B/15 or 2 m whichever is less 
+where the shell plating is located inboard of B/5 or 11.5 m, whichever 
+is less, as required by 5.3.3.1. 
+ 
+.2 For cargo ships: 
+ 
+.1 for Vc below or equal 1,000 m3, 0.8 m; 
+ 
+.2 for 1,000 m3 < Vc < 5,000 m3, 0.75 + Vc x 0.2/4,000 m; 
+ 
+.3 for 5,000 m3 ≤ Vc < 30,000 m3, 0.8 + Vc/25,000 m; and 
+ 
+.4 for Vc ≥ 30,000 m3, 2 m, 
+ 
+where: 
+ 
+Vc corresponds to 100% of the gross design volume of the 
+individual fuel tank at 20°C, including domes and 
+appendages. 
+ 
+.5 The lowermost boundary of the fuel ta nk(s) shall be located above  the 
+minimum distance of B/15 or 2.0 m, whichever is less, measured from the
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 17 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+.3 The boundaries of each fuel tank shall be taken as the extreme outer 
+longitudinal, transverse and vertical limits of the tank structure including its 
+tank valves. 
+ 
+.4 For independent tanks the protective distance shall be measured to the tank 
+shell (the primary barrier of the tank containment system). For membrane 
+tanks the distance shall be measured to the bulkheads surrounding the tank 
+insulation. 
+ 
+.5 In no case shall the boundary of the fuel ta nk be located closer to the shell 
+plating or aft terminal of the ship than as follows: 
+ 
+.1 For passenger ships: B/10 but in no case less than 0.8 m. However, 
+this distance need not be greater than B/15 or 2 m whichever is less 
+where the shell plating is lo cated inboard of B/5 or 11.5  m, 
+whichever is less, as required by 5.3.3.1. 
+ 
+.2 For cargo ships: 
+ 
+.1 for Vc below or equal 1,000 m3, 0.8 m;
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 15 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+5.3.3 The fuel tank(s) shall be protected from external damage caused by collision or 
+grounding in the following way: 
+ 
+.1 The fuel tanks shall be located at a minimum distance of B/5 or 11.5  m, 
+whichever is less, measured inboard from the ship side at right angles to the 
+centreline at the level of the summer load line draught; 
+ 
+where: 
+ 
+B is the greatest moulded br eadth of the ship at or below  the 
+deepest draught (summer load line draught)  (refer to SOLAS 
+regulation II-1/2.8). 
+ 
+.2 The boundaries of each fuel tank shall be taken as the extreme outer 
+longitudinal, transverse and vertical limits of the tank structure i ncluding its 
+tank valves. 
+ 
+.3 For independent tanks the protective distance shall be measured to the tank 
+shell (the primary barrier of the tank containment system). For membrane 
+tanks the distance shall be measured to the bulkheads surrounding the tank 
+insulation.
+
+---
+
+whichever is less, as required by 5.3.3.1. 
+ 
+.2 For cargo ships: 
+ 
+.1 for Vc below or equal 1,000 m3, 0.8 m; 
+ 
+.2 for 1,000 m3 < Vc < 5,000 m3, 0.75+ Vc x 0.2/4,000 m; 
+ 
+.3 for 5,000 m3 ≤ Vc < 30,000 m3, 0.8 + Vc/25,000 m; and 
+ 
+.4 for Vc ≥ 30,000 m3, 2 m, 
+ 
+where: 
+ 
+Vc corresponds to 100% of the gross design volume of the 
+individual fuel tank at 20°C, including domes and 
+appendages. 
+ 
+.6 In case of more than one non-overlapping fuel tank located in the longitudinal 
+direction, fCN shall be calculated in accordance with paragraph  5.3.4.2 for 
+each fuel tank separately.  The value used for the complete fuel tank 
+arrangement is the sum of all values for fCN obtained for each separate tank. 
+ 
+.7 In case the fuel tank arrangement is unsymmetr ical about the centreline of 
+the ship, the calculations of fCN shall be calculated on both starboard and port 
+side and the average value shall be used for the assessment. The minimum","For a cargo ship with a volume Vc greater than or equal to 30,000 m3, the minimum distance between fuel tanks is 2 meters, as specified in paragraph .4 of the passage."
+What page number is referenced for regulations on gas fuel supply to consumers in ESD-protected machinery spaces?,9.7,"9.5 Regulations for fuel distribution outside of machinery space ........................ 77 
+9.6 Regulations for fuel supply to consumers in gas-safe machinery spaces .... 78 
+9.7 Regulations for gas fuel supply to consumers in ESD-protected machinery 
+spaces .................................................................................................................. 78
+
+---
+
+space. 
+ 
+5.5.2 All fuel piping within machinery space boundaries shall be enclos ed in a gas tight 
+enclosure in accordance with 9.6. 
+ 
+5.6 Regulations for ESD-protected machinery spaces 
+ 
+5.6.1 ESD protection shall be limited to machinery spaces that are certified for periodically 
+unattended operation. 
+ 
+5.6.2 Measures shall be applied to  protect against explosion, damage of areas outside of 
+the machinery space and ensure redundancy of power supply. The following arrangement shall 
+be provided but may not be limited to: 
+ 
+.1 gas detector; 
+ 
+.2 shutoff valve; 
+ 
+.3 redundancy; and 
+ 
+.4 efficient ventilation.
+
+---
+
+electrical equipment rooms or control stations as defined in the SOLAS Convention. 
+ 
+5.7.3 Fuel pipes led through ro-ro spaces, special category spaces and on open decks shall 
+be protected against mechanical damage. 
+ 
+5.7.4 Gas fuel piping in ESD protected machinery spaces shall be located as far as 
+practicable from the electrical installations and tanks containing flammable liquids. 
+ 
+5.7.5 Gas fuel piping in ESD protected machinery spaces shall be protected against 
+mechanical damage. 
+ 
+5.8 Regulations for fuel preparation room design 
+ 
+Fuel preparation rooms shall be located on an open deck, unless those rooms are arranged and 
+fitted in accordance with the regulations of this Code for tank connection spaces. 
+ 
+5.9 Regulations for bilge systems 
+ 
+5.9.1 Bilge systems installed in areas where fuel covered by this Code can be present shall 
+be segregated from the bilge system of spaces where fuel cannot be present.
+
+---
+
+shutdown of fuel supply to any one machinery space does not lead to an unacceptable loss of 
+power. 
+ 
+5.6.5 ESD protected machinery spaces separated by a single bulkhead shall have sufficient 
+strength to withstand the effects of a local gas explosion in either space, without affecting the 
+integrity of the adjacent space and equipment within that space. 
+ 
+5.6.6 ESD protected machinery spaces shall be designed to provide a geometrical shape 
+that will minimize the accumulation of gases or formation of gas pockets. 
+ 
+5.6.7 The ventilation system of ESD -protected machinery spaces shall be arranged in 
+accordance with 13.5. 
+ 
+5.7 Regulations for location and protection of fuel piping 
+ 
+5.7.1 Fuel pipes shall not be located less than 800 mm from the ship's side. 
+ 
+5.7.2 Fuel piping shall not be led directly through accommodation spaces, service spaces, 
+electrical equipment rooms or control stations as defined in the SOLAS Convention.",The page number referenced for regulations on gas fuel supply to consumers in ESD-protected machinery spaces is 78.
+What is the minimum design condition under which a type expansion joint must withstand twice the design pressure?,"I don't have enough information from the provided document to answer your question. The context only mentions design conditions and requirements for type expansion joints, but it does not specify a minimum design condition under which a type expansion joint must withstand twice the design pressure.","MSC 95/22/Add.1 
+Annex 1, page 35 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+where: 
+ 
+ x.st, y.st, z.st, xy.st, xz.st and yz.st are static stresses; and 
+ 
+ x.dyn, y.dyn, z.dyn, xy.dyn, xz.dyn and yz.dyn are dynamic stresses, 
+ 
+each shall be determined separately from acceleration components and hull strain components 
+due to deflection and torsion. 
+ 
+6.4.12 Design conditions 
+ 
+All relevant failure modes shall be considered in the design for all relevant load scenarios and 
+design conditions. The design conditions are given in the earlier part of this chapter, and the 
+load scenarios are covered by 6.4.11.2. 
+ 
+6.4.12.1 Ultimate design condition 
+ 
+6.4.12.1.1 Structural capacity may be determined by testing, or by analysis, taking into 
+account both the elastic and plastic material properties, by simplified linear elastic analysis or 
+by the provisions of this Code: 
+ 
+.1 Plastic deformation and buckling shall be considered.
+
+---
+
+.2 A pressure test shall be performed on a type expansion joint, complete with 
+all the accessories such as flanges, stays and articulations, at  the minimum 
+design temperature and twice the design pressure at the extreme 
+displacement conditions recommended by the manufacturer without 
+permanent deformation. 
+ 
+.3 A cyclic test (thermal movements) shall be performed on a complete 
+expansion joint, which shall withstand at  least as many cycles under the 
+conditions of pressure, temperature, axial movement, rotational movement 
+and transverse movement as it will encounter in actual service. Testing at 
+ambient temperature is permitted when this testing is at least as severe as 
+testing at the service temperature. 
+ 
+.4 A cyclic fatigue test (ship deformation, ship accelerations and pipe vibrations) 
+shall be performed on a complete expansion joint, without internal pressure, 
+by simulating the bellows movement corresponding to  a compensated pipe
+
+---
+
+design solutions as well as novel designs. This more generic approach maintains a level of 
+safety similar to that achieved for known containment systems as designed using 6.4.15. 
+ 
+6.4.16.2.1 The limit state design is a systematic approach where each structural element is 
+evaluated with respect to possible failure modes related to the design c onditions identified 
+in 6.4.1.6. A limit state  can be defined as a condition beyond which the structure, or part of 
+a structure, no longer satisfies the regulations. 
+ 
+6.4.16.2.2 For each failure mode, one or more limit states may be relevant. By consideration 
+of all relevant limit states, the limit load for the structural element is found as the minimum limit 
+load resulting from all the relevant limit states. The limit states are divided into the three 
+following categories: 
+ 
+.1 Ultimate limit states (ULS), which correspond to the maximum load -carrying 
+capacity or, in some cases, to the maximum applicable strain or deformation;
+
+---
+
+used, type of joints, welding procedure and type of loading. For process 
+pressure vessels  the Administration may accept partial non -destructive 
+examinations, but not less than those of 16.3.6.4, depending on such factors 
+as the material used, the design temperature, the nil ductility transition 
+temperature of the material as fabricated and the type of joint and welding 
+procedure, but in this case an efficiency factor of not more than 0.85 shall be 
+adopted. For special materials the above -mentioned factors shall be 
+reduced, depending on the specified mechanical properties of the welded 
+joint. 
+ 
+6.4.15.3.2.2 The design liquid pressure defined in 6.4.9.3.3.1 shall be taken into account in 
+the internal pressure calculations. 
+ 
+6.4.15.3.2.3 The design external pressure Pe, used for verifying the buckling of the pressure 
+vessels, shall not be less than that given by: 
+ 
+Pe = P1+P2+P3+P4  (MPa) 
+where:","The minimum design condition under which a type expansion joint must withstand twice the design pressure is at the minimum design temperature. This is specified in section .2 of the passage, where it states that a pressure test shall be performed on the expansion joint at the minimum design temperature and twice the design pressure."
+What is the maximum design vapour pressure (P0) for Type B independent tanks primarily constructed of plane surfaces?,The maximum design vapour pressure (P0) for Type B independent tanks primarily constructed of plane surfaces is less than 0.07 MPa.,"given in 6.4.15 for the various tank types, a vapour pressure 𝑃ℎ higher than  
+P0 may be accepted for site specific conditions (harbour or other locations), 
+where dynamic loads are reduced.
+
+---
+
+account their lower probability of occurrence. 
+ 
+6.4.15.2 Type B independent tanks 
+ 
+6.4.15.2.1 Design basis 
+ 
+6.4.15.2.1.1 Type B independent tanks are  tanks designed using model tests, refined 
+analytical tools and analysis methods to determine stress levels, fatigue life and crack 
+propagation characteristics. Where such tanks are primarily constructed of plane surfaces 
+(prismatic tanks) the design vapour pressure P0 shall be less than 0.07 MPa. 
+ 
+6.4.15.2.1.2 A partial secondary barrier with a protection system is required as defined 
+in 6.4.3. The small leak protection system shall be designed according to 6.4.5. 
+ 
+6.4.15.2.2 Structural analysis 
+ 
+6.4.15.2.2.1 The effects of all dynamic and static loads shall be used to determine  the 
+suitability of the structure with respect to: 
+ 
+.1 plastic deformation; 
+ 
+.2 buckling; 
+ 
+.3 fatigue failure; and 
+ 
+.4 crack propagation. 
+ 
+Finite element analysis or similar methods and fracture mechanics analysis or an equivalent
+
+---
+
+6.4.15.3.1.2 The design vapour pressure shall not be less than: 
+ 
+𝑃0 = 0.2 + 𝐴𝐶(𝜌𝑟)1.5 (MPa) 
+ 
+where: 
+ 
+𝐴 = 0.00185( 𝜎𝑚
+∆𝜎𝐴
+)
+2
+ 
+ 
+with: 
+ 
+𝜎𝑚 = design primary membrane stress; 
+ 
+∆𝜎𝐴 = allowable dynamic membrane stress (double amplitude at 
+probability level Q = 10-8) and equal to: 
+ 
+- 55 N/mm2 for ferritic-perlitic, martensitic and austenitic steel; 
+ 
+- 25 N/mm2 for aluminium alloy (5083-O); 
+ 
+𝐶 = a characteristic tank dimension to be taken as the greatest of the following: 
+ 
+h, 0.75b or 0.45ℓ, 
+ 
+with: 
+ 
+h = height of tank (dimension in ship's vertical direction) (m); 
+ 
+b = width of tank (dimension in ship's transverse direction) (m); 
+ 
+ℓ = length of tank (dimension in ship's longitudinal direction) (m); 
+ 
+𝜌𝑟  = the relative density of the cargo ( 𝜌𝑟 = 1 for fresh water) at  the design 
+temperature.
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 48 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+.8 Secondary stress  is a normal stres s or shear stress developed by 
+constraints of adjacent parts or by self -constraint of a structure. The basic 
+characteristic of a secondary stress is that it is self -limiting. Local yielding 
+and minor distortions can satisfy the conditions that cause the st ress to 
+occur. 
+ 
+6.4.15.3 Type C independent tanks 
+ 
+6.4.15.3.1 Design basis 
+ 
+6.4.15.3.1.1 The design basis for type C independent tanks is based on pressure vessel 
+criteria modified to include fracture mechanics and crack propagation criteria. The minimum 
+design pressure defined in 6.4.15.3.1.2 is intended to ensure that the dynamic stress is 
+sufficiently low so that an initial surface flaw will not propagate more than half the thickness of 
+the shell during the lifetime of the tank. 
+ 
+6.4.15.3.1.2 The design vapour pressure shall not be less than: 
+ 
+𝑃0 = 0.2 + 𝐴𝐶(𝜌𝑟)1.5 (MPa) 
+ 
+where: 
+ 
+𝐴 = 0.00185( 𝜎𝑚",The maximum design vapour pressure (P0) for Type B independent tanks primarily constructed of plane surfaces is less than 0.07 MPa.
+What is the minimum design temperature at which a longitudinal bulkhead between liquefied gas fuel tanks must remain suitable for credit to be taken for heating?,"According to the provided context, the minimum design temperature at which a longitudinal bulkhead between liquefied gas fuel tanks must remain suitable for credit to be taken for heating is minus 30°C.",".1 for any transverse hull structure; 
+ 
+.2 for longitudinal hull structure referred to in 6.4.13.1.1.2 where colder ambient 
+temperatures are specified, provided the material remains suitable for the 
+ambient temperature conditions of plus 5°C for air and 0°C for seawater with 
+no credit taken in the calculations for heating; and 
+ 
+.3 as an alternative to 6.4.13.1.1. 3.2, for longitudinal bulkhead between 
+liquefied gas fuel tanks, credit may be taken for heating provided the material 
+remain suitable for a minimum design temperature of minus 30° C, or a 
+temperature 30°C lower than that determined by  6.4.13.1.1.1 with the 
+heating considered, whichever is less.  In this case, the ship 's longitudinal 
+strength shall comply with SOLAS regulation II -1/3-1 for both when those 
+bulkhead(s) are considered effective and not. 
+ 
+6.4.13.1.1.4 The means of heating referred to in 6.4.13.1.1.3 shall comply with the following:
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 40 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+6.4.13.1.1.2 The materials of all hull structures for which the calculated temperature in  the 
+design condition is below 0°C, due to the influence of liquefied gas fuel temperature, shall be in 
+accordance with table 7.5. This includes hull structure supporting the liquefied gas  fuel tanks, 
+inner bottom plating, longitudinal bulkhead plating, transverse bulkhead plating, floors, webs, 
+stringers and all attached stiffening members. 
+ 
+6.4.13.1.1.3 Means of heating structural materials may be used to ensure that the material 
+temperature does not fall below the minimum allowed for the grade of m aterial specified in 
+table 7.5. In the calculations required in 6.4.13.1.1.1, credit for such heating may be taken in 
+accordance with the following principles: 
+ 
+ .1 for any transverse hull structure; 
+ 
+.2 for longitudinal hull structure referred to in 6.4.13.1.1.2 where colder ambient
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 62 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+6.8 Regulations on loading limit for liquefied gas fuel tanks 
+ 
+6.8.1 Storage tanks for liquefied gas shall not be filled to more than a volume equivalent 
+to 98% full at the reference temperature as defined in 2.2.36. 
+ 
+A loading limit curve for actual fuel loading temperatures shall be prepared from the following 
+formula: 
+ 
+LL = FL ρR/ρL 
+ 
+where: 
+ 
+LL  =  loading limit as defined in 2.2.27, expressed in per cent; 
+ 
+FL  =  filling limit as defined in 2.2.16 expressed in per cent, here 98%; 
+ 
+ρR  =  relative density of fuel at the reference temperature; and 
+ 
+ρL  =  relative density of fuel at the loading temperature. 
+ 
+6.8.2 In cases where the tank insulation and tank location make t he probability very small 
+for the tank contents to be heated up due to an external fire, special considerations may be 
+made to allow a higher loading limit than calculated using the reference temperature, but never
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 31 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+ 
+ 
+Figure 6.4.2 – Determination of internal pressure heads 
+ 
+ 
+6.4.9.3.3.2 External pressure 
+ 
+External design pressure loads shall be based on the difference between the minimum internal 
+pressure and the maximum external pressure to which any portion of the tank may be 
+simultaneously subjected. 
+ 
+6.4.9.3.3.3 Thermally induced loads 
+ 
+6.4.9.3.3.3.1 Transient thermally induced loads during cooling down periods shall be 
+considered for tanks intended for liquefied gas fuel temperatures below minus 55°C. 
+ 
+6.4.9.3.3.3.2 Stationary thermally induced loads shall be considered for liquefied gas fuel 
+containment systems where the design supporting arrangements or attachments and 
+operating temperature may give rise to significant thermal stresses (see paragraph 6.9.2). 
+ 
+6.4.9.3.3.4 Vibration 
+ 
+The potentially damaging effects of vibration on the liquefied gas fuel containment system shall 
+be considered.","For a longitudinal bulkhead between liquefied gas fuel tanks, credit can be taken for heating if the material remains suitable at a minimum design temperature of minus 30° C, or a temperature 30°C lower than that determined by calculation with heating considered, whichever is less."
+What are the six total stresses and shear stresses that shall be determined for calculating the equivalent stress σc?,"The six total stresses and shear stresses that shall be determined for calculating the equivalent stress σc are:
+
+1. Total normal stress in x-direction: σx
+2. Total normal stress in y-direction: σy
+3. Total normal stress in z-direction: σz
+4. Total shear stress in x-y plane: τxy
+5. Total shear stress in x-z plane: τxz
+6. Total shear stress in y-z plane: τyz","stresses shall not exceed: 
+ 
+ σm  ≤ f 
+ σL  ≤ 1.5f 
+ σb  ≤ 1.5F 
+ σL+σb  ≤ 1.5F 
+ σm+σb  ≤ 1.5F 
+ σm+σb+σg ≤ 3.0F 
+ σL+σb+σg ≤ 3.0F 
+ 
+where: 
+ 
+σm =  equivalent primary general membrane stress; 
+ 
+σL =  equivalent primary local membrane stress; 
+ 
+σb =  equivalent primary bending stress; 
+ 
+σg = equivalent secondary stress; 
+ 
+f  = the lesser of (Rm / A) or (Re / B); and 
+ 
+F = the lesser of (Rm / C) or (Re / D), 
+ 
+with Rm and Re as defined in 6.4.12.1.1.3. With regard to the stresses m, L, g and b see also 
+the definition of stress categories in 6.4.15.2.3.6. 
+ 
+The values A and B shall have at least the following minimum values:
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 36 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+.4 The equivalent stress σc (von Mises, Huber) shall be determined by: 
+ 
+  
+ 
+where: 
+ 
+ x = total normal stress in x-direction; 
+ y = total normal stress in y-direction; 
+ z = total normal stress in z-direction; 
+ xy = total shear stress in x-y plane; 
+ xz = total shear stress in x-z plane; and 
+ yz = total shear stress in y-z plane. 
+ 
+The above values shall be calculated as described in 6.4.11.2.3. 
+ 
+.5 Allowable stresses for materials other than those covered by 7.4 shall be 
+subject to approval by the Administration in each case. 
+ 
+.6 Stresses may be further limited by fatigue analysis, crack propagation 
+analysis and buckling criteria. 
+ 
+6.4.12.2 Fatigue Design Condition 
+ 
+.1 The fatigue design condition is the design condition with respect to 
+accumulated cyclic loading. 
+ 
+.2 Where a fatigue analysis is required the cumulative effect of the fatigue load 
+shall comply with: 
+ 
+∑ 𝑛𝑖
+𝑁𝑖
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 47 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+6.4.15.2.3.6 Stress categories 
+ 
+For the purpose of stress evaluation, stress categories are defined in this section as follows: 
+ 
+.1 Normal stress is the component of stress normal to the plane of reference. 
+ 
+.2 Membrane stress  is the component of normal stress that is un iformly 
+distributed and equal to the average value of the stress across the thickness 
+of the section under consideration. 
+ 
+.3 Bending stress  is the variable stress across the thickness of the section 
+under consideration, after the subtraction of the membrane stress. 
+ 
+.4 Shear stress is the component of the stress acting in the plane of reference. 
+ 
+.5 Primary stress  is a stress produced by the imposed loading, which is 
+necessary to balance the external forces and moments. The basic 
+characteristic of a primary stress is that it is not self-limiting. Primary stresses
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 105 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+ 
+ 
+The stresses , , , and  are defined in 4.8.4. 
+ 
+Guidance Note: 
+ 
+The stress summation described above shall be carried out by summing up each stress 
+component ( ), and subsequently the equivalent stress shall be calculated based 
+on the resulting stress components. 
+ 
+Skin plates shall be designed in accordance with the requirements of the Administration. When 
+membrane stress is significant, the effect of the membrane stress on the plate bending capacity 
+shall be appropriately considered in addition. 
+ 
+4.8.4 Section stress categories 
+ 
+Normal stress is the component of stress normal to the plane of reference. 
+ 
+Equivalent section membrane stress is the component of the normal stress that is uniformly 
+distributed and equal to the average value of the stress across the cross section of the structure 
+under consideration. If this is a simple shell section, the section membrane stress is identical","The six total stresses and shear stresses that shall be determined for calculating the equivalent stress σc are: total normal stress in x-direction (σx), total normal stress in y-direction (σy), total normal stress in z-direction (σz), total shear stress in x-y plane (τxy), total shear stress in x-z plane (τxz), and total shear stress in y-z plane (τyz)."
+"What potential dangers to the ship, persons on board, or environment should be avoided when designing the fuel containment system?","According to the provided context, the following potential dangers should be avoided when designing the fuel containment system:
+
+1. Exposure of ship materials to temperatures below acceptable limits.
+2. Flammable fuels spreading to locations with ignition sources.
+3. Toxicity potential and risk of oxygen deficiency due to fuels and inert gases.
+4. Restriction of access to muster stations, escape routes, and life-saving appliances (LSA).
+5. Reduction in availability of LSA.
+
+These dangers are mentioned in section 6.2 Functional requirements as the potential dangers to be avoided when designing the fuel containment system.","fuelled ship. 
+ 
+6.2 Functional requirements 
+ 
+This chapter relates to functional requirements in 3.2.1, 3.2.2, 3.2.5  and 3.2.8 to 3.2.17.  
+In particular the following apply: 
+ 
+ .1 the fuel containment system shall be so designed that a leak from the tank 
+or its connections does not endanger the ship, persons on board or  the 
+environment. Potential dangers to be avoided include: 
+ 
+.1 exposure of ship materials to temperatures below acceptable limits; 
+ 
+.2 flammable fuels spreading to locations with ignition sources; 
+ 
+.3 toxicity potential and risk of oxygen deficiency due to fuels and inert 
+gases; 
+ 
+.4 restriction of access to muster stations, escape routes and  
+life-saving appliances (LSA); and 
+ 
+.5 reduction in availability of LSA. 
+ 
+ .2 the pressure and temperature in the fuel tank shall be kept within the design 
+limits of the containment system and possible carriage requirement s of the 
+fuel;
+
+---
+
+3.2.12 to 3.2.15 and 3.2.17. In particular the following apply: 
+ 
+ .1 the fuel tank(s) shall be located in such a way that the probability for  the 
+tank(s) to be damag ed following a collision or grounding is reduced to  a 
+minimum taking into account the safe operation of the ship and other hazards 
+that may be relevant to the ship; 
+ 
+ .2 fuel containment systems, fuel piping and other fuel sources of release shall 
+be so located and arranged that released gas is lead to a safe location in the 
+open air; 
+ 
+ .3 the access or other openings to spaces containing fuel sources of release 
+shall be so arranged that flammable, asphyxiating or toxic gas cannot escape 
+to spaces that are not designed for the presence of such gases 
+ 
+ .4 fuel piping shall be protected against mechanical damage; 
+ 
+ .5 the propulsion and fuel supply system shall be so designed that  safety 
+actions after any gas leakage do not lead to an unacceptable loss of 
+power; and
+
+---
+
+minimum through arrangement and system design, such as ventilation, detection and safety 
+actions. In the event of gas leakage or failure of the risk reducing measures, necessary safety 
+actions shall be initiated. 
+ 
+3.2.3 The design philosophy shall ensure that risk reducing measures and safety actions 
+for the gas fuel installation do not lead to an unacceptable loss of power. 
+ 
+3.2.4 Hazardous areas shall be restricted, as far as practicable, to minimize the potentia l 
+risks that might affect the safety of the ship, persons on board, and equipment. 
+ 
+3.2.5 Equipment installed in hazardous areas shall be minimized to that required for 
+operational purposes and shall be suitably and appropriately certified. 
+ 
+3.2.6 Unintended accumulation of explosive, flammable or toxic gas concentrations shall 
+be prevented. 
+ 
+3.2.7 System components shall be protected against external damages. 
+ 
+3.2.8 Sources of ignition in hazardous areas shall be minimized to reduce the probability of
+
+---
+
+.2 damage the ship in such a way that flooding of water below the main deck or 
+any progressive flooding occur; 
+ 
+.3 damage work areas or accommodation in such a way that persons who stay 
+in such areas under normal operating conditions are injured; 
+ 
+.4 disrupt the proper functioning of control stations and switchboard rooms 
+necessary for power distribution; 
+ 
+.5 damage life-saving equipment or associated launching arrangements; 
+ 
+.6 disrupt the proper functioning of firefighting equipment located outside  
+the explosion-damaged space; 
+ 
+.7 affect other areas of the ship in such a way  that chain reactions involving, 
+inter alia, cargo, gas and bunker oil may arise; or 
+ 
+.8 prevent persons access to life-saving appliances or impede escape routes. 
+ 
+                                                 
+4 Double wall fuel pipes are not considered as potential sources of release.","When designing the fuel containment system, potential dangers to avoid include exposure of ship materials to temperatures below acceptable limits, flammable fuels spreading to locations with ignition sources, toxicity potential and risk of oxygen deficiency due to fuels and inert gases, restriction of access to muster stations, escape routes, and life-saving appliances, and reduction in availability of these appliances."
+What percentage of butt-welded joints of pipes must be subjected to radiographic or ultrasonic inspection?,At least 10% of butt-welded joints of pipes must be subjected to radiographic or ultrasonic inspection.,"reduction in the extent of radiographic or ultrasonic inspection can be agreed, 
+but in no case to less than 10% of each joint. If defects are revealed the extent 
+of examination shall be increased to 100% and shall include inspection of 
+previously accepted welds. This approval can only be  granted if well -
+documented quality assurance procedures and records are available to assess 
+the ability of the manufacturer to produce satisfactory welds consistently. 
+ 
+ .3 The radiographic or ultrasonic inspection regulation may be reduced to 10% 
+for butt-welded joints in the outer pipe of double-walled fuel piping. 
+ 
+ .4 For other butt -welded joints of pipes not covered by 16.6.3.1 and 16.6.3.3, 
+spot radiographic or ultrasonic inspection or other non-destructive tests shall 
+be carried out depending upon service, position and materials. In general, at 
+least 10% of butt-welded joints of pipes shall be subjected to radiographic or 
+ultrasonic inspection. 
+ 
+16.7 Testing regulations
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 116 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+16.6.3 Non-destructive testing 
+ 
+In addition to normal controls before and during the welding, and to the visual inspection of the 
+finished welds, as necessary for proving that the welding has been carried out correctly and 
+according to the regulations in this paragraph, the following tests shall be required: 
+ 
+ .1 100% radiographic or ultrasonic inspection of butt -welded joints for piping 
+systems with; 
+ 
+.1 design temperatures colder than minus 10°C; or 
+ 
+.2 design pressure greater than 1.0 MPa; or 
+ 
+.3 gas supply pipes in ESD protected machinery spaces; or 
+ 
+.4 inside diameters of more than 75 mm; or 
+ 
+.5 wall thicknesses greater than 10 mm. 
+ 
+.2 When such butt welded joints of piping sections are made by automatic 
+welding procedures approved by the Administratio n, then a progressive 
+reduction in the extent of radiographic or ultrasonic inspection can be agreed,
+
+---
+
+least 10% of butt-welded joints of pipes shall be subjected to radiographic or 
+ultrasonic inspection. 
+ 
+16.7 Testing regulations 
+ 
+16.7.1 Type testing of piping components 
+ 
+Valves 
+ 
+Each type of piping component intended to be used at a working temperature below  
+minus 55°C shall be subject to the following type tests: 
+ 
+.1 Each size and type of valve shall be subjected to seat tightness testing over 
+the full range of operating pressures and temperatures, at intervals, up to the 
+rated design pressure of the valve.  Allowable leakage rates shall be to the 
+requirements of the Administratio n During the testing satisfactory operation 
+of the valve shall be verified. 
+ 
+.2 The flow or capacity shall be certified to a recognized standard for each size 
+and type of valve.
+
+---
+
+reinforcement rings around holes, nozzles, etc. 
+ 
+ .2 Partial non-destructive testing referred to in 6.4.15.3.2.1.3: 
+ 
+  Radiographic testing: 
+ 
+.1 all butt welded crossing joints and at least 10% of the full length of 
+butt welds at selected positions uniformly distributed. 
+ 
+  Non-destructive testing for surface crack detection: 
+ 
+.2 reinforcement rings around holes, nozzles, etc. over their full length. 
+ 
+  Ultrasonic testing: 
+ 
+.3 as may be required by the Administration in each instance. 
+ 
+16.3.6.5 The quality assurance/quality control (QA/QC) program shall ensure the continued 
+conformity of the non -destructive testing of welds, as defined in the material manufacturer 's 
+quality manual (QM). 
+ 
+16.3.6.6 Inspection of piping shall be carried out in accordance with the regulations of 
+chapter 7. 
+ 
+16.3.6.7 The secondary barrier shall be n on-destructive tested for internal de fects as",At least 10% of butt-welded joints of pipes must be subjected to radiographic or ultrasonic inspection.
+What is the minimum distance that the lowermost boundary of the fuel tank(s) must be located above?,"The minimum distance that the lowermost boundary of the fuel tank(s) must be located above is B/15 or 2.0 m, whichever is less.","MSC 95/22/Add.1 
+Annex 1, page 15 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+5.3.3 The fuel tank(s) shall be protected from external damage caused by collision or 
+grounding in the following way: 
+ 
+.1 The fuel tanks shall be located at a minimum distance of B/5 or 11.5  m, 
+whichever is less, measured inboard from the ship side at right angles to the 
+centreline at the level of the summer load line draught; 
+ 
+where: 
+ 
+B is the greatest moulded br eadth of the ship at or below  the 
+deepest draught (summer load line draught)  (refer to SOLAS 
+regulation II-1/2.8). 
+ 
+.2 The boundaries of each fuel tank shall be taken as the extreme outer 
+longitudinal, transverse and vertical limits of the tank structure i ncluding its 
+tank valves. 
+ 
+.3 For independent tanks the protective distance shall be measured to the tank 
+shell (the primary barrier of the tank containment system). For membrane 
+tanks the distance shall be measured to the bulkheads surrounding the tank 
+insulation.
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 17 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+.3 The boundaries of each fuel tank shall be taken as the extreme outer 
+longitudinal, transverse and vertical limits of the tank structure including its 
+tank valves. 
+ 
+.4 For independent tanks the protective distance shall be measured to the tank 
+shell (the primary barrier of the tank containment system). For membrane 
+tanks the distance shall be measured to the bulkheads surrounding the tank 
+insulation. 
+ 
+.5 In no case shall the boundary of the fuel ta nk be located closer to the shell 
+plating or aft terminal of the ship than as follows: 
+ 
+.1 For passenger ships: B/10 but in no case less than 0.8 m. However, 
+this distance need not be greater than B/15 or 2 m whichever is less 
+where the shell plating is lo cated inboard of B/5 or 11.5  m, 
+whichever is less, as required by 5.3.3.1. 
+ 
+.2 For cargo ships: 
+ 
+.1 for Vc below or equal 1,000 m3, 0.8 m;
+
+---
+
+tanks the distance shall be measured to the bulkheads surrounding the tank 
+insulation. 
+ 
+.4 In no case shall the boundary of the fuel tank be located closer to the shell 
+plating or aft terminal of the ship than as follows: 
+ 
+.1 For passenger ships: B/10 but in no case less than 0.8 m. However, 
+this distance need not be greater than B/15 or 2 m whichever is less 
+where the shell plating is located inboard of B/5 or 11.5 m, whichever 
+is less, as required by 5.3.3.1. 
+ 
+.2 For cargo ships: 
+ 
+.1 for Vc below or equal 1,000 m3, 0.8 m; 
+ 
+.2 for 1,000 m3 < Vc < 5,000 m3, 0.75 + Vc x 0.2/4,000 m; 
+ 
+.3 for 5,000 m3 ≤ Vc < 30,000 m3, 0.8 + Vc/25,000 m; and 
+ 
+.4 for Vc ≥ 30,000 m3, 2 m, 
+ 
+where: 
+ 
+Vc corresponds to 100% of the gross design volume of the 
+individual fuel tank at 20°C, including domes and 
+appendages. 
+ 
+.5 The lowermost boundary of the fuel ta nk(s) shall be located above  the 
+minimum distance of B/15 or 2.0 m, whichever is less, measured from the
+
+---
+
+side and the average value shall be used for the assessment. The minimum 
+distance as set forth in paragraph 5.3.4.5 shall be met on both sides. 
+ 
+.8 For ships with a hull structure providing higher collision and/or grounding 
+resistance, fuel tank location regulations may be specially considered in 
+accordance with section 2.3. 
+ 
+5.3.5 When fuel is carried in a fuel containment system requiring a comple te or partial 
+secondary barrier: 
+ 
+.1 fuel storage hold spaces shall be segregated from the sea by a double 
+bottom; and 
+ 
+.2 the ship shall also have a longitudinal bulkhead forming side tanks.","The minimum distance that the lowermost boundary of the fuel tank(s) must be located above is 2.0 m, or B/15, whichever is less."
+What is the minimum distance from the surface of a material to the edge of a Charpy V-notch specimen in a weld test?,The minimum distance from the surface of a material to the edge of a Charpy V-notch specimen in a weld test is approximately 1 mm or greater.,"MSC 95/22/Add.1 
+Annex 1, page 108 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+16.2.2.2 For base metal, the largest size Charpy V-notch specimens possible for the material 
+thickness shall be machined with the specimens located as near as practicable to a point 
+midway between the surface and the centre of the thickness and the le ngth of  the notch 
+perpendicular to the surface as shown in figure 16.1. 
+ 
+ 
+Figure 16.1 – Orientation of base metal test specimen 
+ 
+16.2.2.3 For a weld test specimen, the largest size Charpy V -notch specimens possible for 
+the material thickness shall be mach ined, with the specimens located as near as practicable 
+to a point midway between the surface and the centre of the thickness. In all cases the distance 
+from the surface of the material to the edge of the specimen shall be approximately 1 mm or 
+greater. In addition, for double-V butt welds, specimens shall be machined closer to the surface
+
+---
+
+regulations may be modified at the discretion of the Administration.  
+ 
+16.2 General test regulations and specifications 
+ 
+16.2.1 Tensile test 
+ 
+16.2.1.1 Tensile testing shall be carried out in accordance with recognized standards. 
+ 
+16.2.1.2 Tensile strength, yield stress and elongation shall be to the satisfaction of  the 
+Administration. For carbon-manganese steel and other materials with definitive yie ld points, 
+consideration shall be given to the limitation of the yield to tensile ratio. 
+ 
+16.2.2 Toughness test 
+ 
+16.2.2.1 Acceptance tests for metallic materials shall include Charpy V-notch toughness tests 
+unless otherwise specified by the Administratio n. The specified Charpy V -notch regulations 
+are minimum average energy values for three full size (10 mm × 10 mm) specimens and 
+minimum single energy values for individual specimens. Dimensions and tolerances of Charpy 
+V-notch specimens shall be in accordanc e with recognized standards. The testing and
+
+---
+
+Sampling frequency 
+ Plates Each 'piece' to be tested  
+ Sections and forgings Each 'batch' to be tested 
+Mechanical properties 
+ Tensile properties Specified minimum yield stress not to exceed 410 N/mm2, 5 
+Toughness (Charpy V-notch test) 
+ Plates Transverse test pieces. Minimum average energy value (KV) 27J 
+ Sections and forgings Longitudinal test pieces. Minimum average energy (KV) 41J 
+ Test temperature 5°C below the design temperature or -20°C whichever is lower 
+Notes 
+1. The Charpy V -notch and chemistry regulations for forgings  may be specially considered by  the 
+Administration. 
+2. For material thickness of more than 25 mm, Charpy V-notch tests shall be conducted as follows: 
+Material thickness (mm) Test temperature (°C) 
+25 < t ≤ 30 10°C below design temperature or -20°C whichever is lower 
+30 < t ≤ 35 15°C below design temperature or -20°C whichever is lower 
+35 < t ≤ 40 20°C below design temperature 
+40 < t Temperature approved by the Administration
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 109 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+16.2.2.4 If the average value of the three initial Charpy V -notch specimens fails to meet  the 
+stated regulations, or the value for more than one specimen is below the required average 
+value, or when the value for one specimen is below the minimum value permitted for a single 
+specimen, three additional specimens from the same material may be tested and the results 
+combined with those previously obtained to form a new average. If this new average complies 
+with the regulations and if no more than two individual results are lower, than the required 
+average and no more than one result is lower than the required value for  a single specimen, 
+the piece or batch may be accepted. 
+ 
+16.2.3 Bend test 
+ 
+16.2.3.1 The bend test may be omitted as a material acceptance test, but is required for weld 
+tests. Where a bend test is performed, this shall be done in accordance with recognized 
+standards.",The minimum distance from the surface of a material to the edge of a Charpy V-notch specimen in a weld test is approximately 1 mm or greater.
+What types of instrumentation and electrical apparatus should be installed in the specified areas?,"According to the provided context, instrumentation and electrical apparatus installed in the following areas should be suitable for zone 1:
+
+* Tank connection spaces
+* Fuel storage hold spaces (except type C tanks)
+* Interbarrier spaces
+* Areas on open deck or semi-enclosed spaces on deck within 3m of any tank hatches, ullage openings, sounding pipes, or gas vapour outlets.
+
+Additionally, instrumentation and electrical apparatus installed in hazardous area zone 0 should be suitable for that specific zone.","MSC 95/22/Add.1 
+Annex 1, page 86 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+12.3.3 Electrical equipment fitted in an ESD -protected machinery space shall fulfil  the 
+following: 
+ 
+.1 in addition to fire and gas hydrocarbon detectors and fire and gas alarms, 
+lighting and ventilation fans shall be certified safe for hazardous area zone 1; 
+and 
+ 
+.2 all electrical equipment in a machinery space containing gas-fuelled engines, 
+and not certified for zone 1 shall be automatically disconnected, if gas 
+concentrations above 40% LEL is detected by two detectors in  the space 
+containing gas-fuelled consumers. 
+ 
+12.4 Regulations on area classification 
+ 
+12.4.1 Area classification is a method of analysing and classifying the areas where explosive 
+gas atmospheres may occur. The object of the classification is to allow  the selection of 
+electrical apparatus able to be operated safely in these areas.
+
+---
+
+electrical apparatus able to be operated safely in these areas. 
+ 
+12.4.2 In order to facilitate the selection of appropriate electrical apparatus and the design of 
+suitable electrical installations, hazardous areas are divided into zones 0, 1 and 2. 21 
+See also 12.5 below. 
+ 
+12.4.3 Ventilation ducts shall have the same area classification as the ventilated space. 
+ 
+12.5 Hazardous area zones 
+ 
+12.5.1 Hazardous area zone 0 
+ 
+This zone includes, but is not limited to the interiors of fuel tanks, any pipework for pressure -
+relief or other venting systems for fuel tanks, pipes and equipment containing fuel. 
+ 
+12.5.2 Hazardous area zone 122 
+ 
+This zone includes, but is not limited to: 
+ 
+.1 tank connection spaces, fuel storage hold spaces23 and interbarrier spaces; 
+ 
+.2 fuel preparation room arranged with ventilation according to 13.6; 
+ 
+.3 areas on open deck, or semi -enclosed spaces on deck, within 3  m of any
+
+---
+
+those acceptable to the Organization.28 
+ 
+14.3.2 Electrical equipment or wiring shall not be installed in hazardous areas unless 
+essential for operational purposes or safety enhancement. 
+ 
+14.3.3 Where electrical equipment is installed in hazardous areas as provided in 14.3.2 it 
+shall be selected, installed and maintained in accordance with standards at least equivalent to 
+those acceptable to the Organization.29 
+ 
+Equipment for hazardous areas shall be eva luated and certified or listed by an accredited 
+testing authority or notified body recognized by the Administration. 
+ 
+14.3.4 Failure modes and effects of single failure for electrical generation and distribution 
+systems in 14.2 shall be analysed and docume nted to be at least equivalent to those 
+acceptable to the Organization.30 
+ 
+14.3.5 The lighting system in hazardous areas shall be divided between at least two branch 
+circuits. All switches and protective devices shall interrupt all poles or phases and shall  be
+
+---
+
+Installations in Ships – Tankers – Special Features for tankers. 
+ 
+22 Instrumentation and electrical apparatus installed within these areas should be of a type suitable for zone 1. 
+ 
+23 Fuel storage hold spaces for type C tanks are normally not considered as zone 1. 
+ 
+24 Such areas are, for example, all areas within 3 m of fuel tank hatches, ullage openings or sounding pipes 
+for fuel tanks located on open deck and gas vapour outlets.","Instrumentation and electrical apparatus should be installed in the specified areas that are within 3 meters of fuel tank hatches, ullage openings, or sounding pipes for fuel tanks located on open deck and gas vapor outlets. These areas are considered zone 1 and require equipment suitable for this hazardous environment. Fuel storage hold spaces for type C tanks are not typically classified as zone 1."
+What conditions must be met for a risk assessment to be required for ships to which part A-1 applies?,"I don't have enough information from the provided document to answer your question about what conditions must be met for a risk assessment to be required for ships to which part A-1 applies. The context only mentions that a risk assessment need only be conducted where explicitly required by certain paragraphs, but it does not specify what those requirements are.","4.2.2  For ships to which part A-1 applies, the risk assessment required by 4.2.1 need only 
+be conduct ed where  explicitly required by paragraphs 5.10.5, 5.12.3, 6.4.1.1, 6.4.15.4.7.2,  
+8.3.1.1, 13.4.1, 13.7 and 15.8.1.10 as well as by paragraphs 4.4 and 6.8 of the annex.
+
+---
+
+the principles related to safety, availability, maintainability and reliability. 
+ 
+3.2.18 A single failure in a technical system or component shall not l ead to an unsafe or 
+unreliable situation. 
+ 
+4 GENERAL REQUIREMENTS 
+ 
+4.1 Goal 
+ 
+The goal of this chapter is to ensure that the necessary assessments of the risks involved are 
+carried out in order to eliminate or mitigate any adverse effect to the persons on b oard, the 
+environment or the ship. 
+ 
+4.2 Risk assessment 
+ 
+4.2.1 A risk assessment shall be conducted to ensure that risks arising from the use of 
+low-flashpoint fuels affecting persons on board, the environment, the structural strength or the 
+integrity of the ship are addressed. Consideration shall be given to the hazards associated with 
+physical layout, operation and maintenance, following any reasonably foreseeable failure. 
+ 
+4.2.2  For ships to which part A-1 applies, the risk assessment required by 4.2.1 need only
+
+---
+
+hull structure from the leakage and less hazards asso ciated with intended fuel. Conversely, 
+higher values may be fixed by  the Administration, for example, for ships carrying more 
+hazardous or higher pressure fuel. The consequence class factor shall in any case not be less 
+than 1.0. 
+ 
+4.5 The load factors and the resistance factors used shall be such that the level of safety 
+is equivalent to that of the fuel containment systems as described in sections 6.4.2.1 to 6.4.2.5. 
+This may be carried out by calibrating the factors against known successful designs. 
+2.1C
+
+---
+
+The response and safety system for hazards and accident control shall be reviewed and tested. 
+ 
+18 OPERATION 
+ 
+18.1 Goal 
+ 
+The goal of this chapter is to ensure that operational procedures for the loading, storage, 
+operation, maintenance, and inspection of systems for gas or low-flashpoint fuels minimize the 
+risk to personnel, the ship and the environment and that are consistent  with practices for a 
+conventional oil fuelled ship whilst taking into account the nature of the liquid or gaseous fuel. 
+ 
+18.2 Functional requirements 
+ 
+This chapter relates to the functional requirements in 3.2.1 to 3.2.3, 3.2.9, 3.2.11, 3.2.15, 3.2.16 
+and 3.2.17. In particular the following apply: 
+ 
+.1 a copy of this Code, or national regulations incorporating the provisions of 
+this Code, shall be on board every ship covered by this Code; 
+ 
+.2 maintenance procedures and information for all gas related installations shall 
+be available on board;","A risk assessment is required for ships to which part A-1 applies when explicitly required by specific regulations listed in the passage, including paragraphs 5.10.5, 13.7, and others mentioned. These regulations specify the conditions under which a risk assessment must be conducted."
+What is the purpose of the additional sensor operating independently of the high liquid level alarm?,The additional sensor operating independently of the high liquid level alarm automatically actuates a shutoff valve in a manner that will both avoid excessive liquid pressure in the bunkering line and prevent the liquefied gas fuel tank from becoming liquid full.,"and visual warning when activated. 
+ 
+.2 An additional sensor oper ating independently of the high liquid level alarm 
+shall automatically actuate a shutoff valve in a manner that will both avoid 
+excessive liquid pressure in the bunkering line and prevent the liquefied gas 
+fuel tank from becoming liquid full. 
+ 
+.3 The position of the sensors in the liquefied gas fuel tank shall be capable of 
+being verified before commissioning. At the first occasion of full loading after 
+delivery and after each dry -docking, testing  of high level alarms shall be 
+conducted by raising the fuel liquid level in the liquefied gas fuel tank to the 
+alarm point. 
+ 
+.4 All elements of the level alarms, including the electrical circuit and  the 
+sensor(s), of the high, and overfill alarms, shall be capable of being 
+functionally tested. Systems shall be test ed prior to fuel operation in 
+accordance with 18.4.3. 
+ 
+.5 Where arrangements are provided for overriding the overflow control system,
+
+---
+
+operate throughout the design pressure range of the liquefied gas fuel tank 
+and at temperatures within the fuel operating temperature range. 
+ 
+.2 Where only one liquid level gauge is fitted it shall be arranged so that it can 
+be maintained in an operational condition without the need to empty or  
+gas-free the tank. 
+ 
+.3 Liquefied gas fuel tank liquid level gauges may be of the following types: 
+ 
+.1 indirect devices, which determine the amount of fuel by means such 
+as weighing or in-line flow metering; or 
+ 
+.2 closed devices, which do not penetrate the liquefied gas fuel tank, 
+such as devices using radio-isotopes or ultrasonic devices; 
+ 
+15.4.2 Overflow control 
+ 
+.1 Each liquefied gas  fuel tank shall be fitted with a high liquid level alarm 
+operating independently of other liquid level indicators and giving an audible 
+and visual warning when activated. 
+ 
+.2 An additional sensor oper ating independently of the high liquid level alarm
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 99 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+Parameter Alarm Automatic 
+shutdown 
+of tank 
+valve6) 
+Automatic 
+shutdown of 
+gas supply to 
+machinery 
+space 
+containing 
+gas-fuelled 
+engines 
+Comments 
+Manually activated 
+emergency shutdown of 
+engine 
+ 
+X 
+  
+X 
+ 
+ 
+1)  Two independent gas detectors located close to each othe r are required for redundancy reasons. If the 
+gas detector is of self-monitoring type the installation of a single gas detector can be permitted. 
+ 
+2)  If the tank is supplying gas to more than one engine and the different supply pipes are completely 
+separated and fitted in separate ducts and with the master valves fitted outside of the duct, only the master 
+valve on the supply pipe leading into the duct where gas or loss of ventilation is detected shall close. 
+ 
+3)  If the gas is supplied to more than one engine and the different supply pipes are completely separated and
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 93 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+15.3.2 A bilge well in each tank connection space of an independent liquefied gas storage 
+tank shall be provided with  both a level indicator and a temper ature sensor. Alarm shall be 
+given at high level in the bilge well. Low temperature indication shall activate the safety system. 
+ 
+15.3.3 For tanks not permanently installed in the ship a monitoring system shall be provided 
+as for permanently installed tanks. 
+ 
+15.4 Regulations for bunkering and liquefied gas fuel tank monitoring 
+ 
+15.4.1 Level indicators for liquefied gas fuel tanks 
+ 
+.1 Each liquefied gas fuel tank shall be fitted with liquid level gauging device(s), 
+arranged to ensure a level reading is always obtainable whenever the 
+liquefied gas  fuel tank is operational. The device(s) shall be designed to 
+operate throughout the design pressure range of the liquefied gas fuel tank",The additional sensor operates independently of the high liquid level alarm to automatically actuate a shutoff valve and prevent excessive liquid pressure in the bunkering line and overfilling of the liquefied gas fuel tank. This is done to ensure safety during fuel operations.
+What types of flanges are allowed for piping with design temperatures colder than minus 55°C?,"For piping with design temperatures colder than minus 55°C, only welded neck flanges are allowed.","accordance with recognized standards, shall only be used for instrument 
+lines and open-ended lines with an external diameter of 50  mm or less and 
+design temperatures not colder than minus 55°C. 
+ 
+.3 Screwed couplings complying with recognized standards shall only be used 
+for accessory lines and instrumentation lines with external diameters 
+of 25 mm or less. 
+ 
+7.3.6.4.2 Flanged connections 
+ 
+.1 Flanges in flange connections shall be of the welded neck, slip-on or socket 
+welded type; and 
+ 
+.2 For all piping except open ended, the following restrictions apply: 
+ 
+.1 For design temperatures colder than minus 55°C, only welded neck 
+flanges shall be used; and 
+ 
+.2 For design temperatures colder than minus 10°C, slip-on flanges shall 
+not be used in nominal sizes above 100 mm and socket welded flanges 
+shall not be used in nominal sizes above 50 mm. 
+ 
+7.3.6.4.3 Expansion joints 
+ 
+Where bellows and expansion joints are provided in accordance with 7.3.6.1 the following apply:
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 69 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+7.3.6.3 The piping system shall be joined by welding with a minimum of flange connections.  
+Gaskets shall be protected against blow-out. 
+ 
+7.3.6.4 Piping fabrication and joining details shall comply with the following: 
+ 
+7.3.6.4.1 Direct connections 
+ 
+.1 Butt-welded joints with complete penetration at the root may be used in all 
+applications. For design temperatures colder than  minus 10°C, butt welds 
+shall be either double welded or equivalent to a double welded butt joint. This 
+may be accomplished by use of a backing ring, consumable insert or inert 
+gas back-up on the first pass. For design pressures in excess of 1.0 MPa and 
+design temperatures of minus 10°C or colde r, backing rings shall be 
+removed. 
+ 
+.2 Slip-on welded joints with sleeves and related welding, having dimensions in 
+accordance with recognized standards, shall only be used for instrument
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 74 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+7.4.1.2 Materials having a melting point below 925°C shall not be used for piping outside the 
+fuel tanks. 
+ 
+7.4.1.3 For CNG tanks, the use of materials not covered above may be specially considered 
+by the Administration. 
+ 
+7.4.1.4 Where required the outer pipe or duct containing high pressure gas in the inner pipe 
+shall as a minimum fulfil the material regulations for pipe materials with design temperature 
+down to minus 55°C in table 7.4. 
+ 
+7.4.1.5 The outer pipe or duct around liquefied gas fuel pipes shall as a minimum fulfil the material 
+regulations for pipe materials with design temperature down to minus 165°C in table 7.4. 
+ 
+8 BUNKERING 
+ 
+8.1 Goal 
+ 
+8.1.1 The goal of this chapter is to provide for suitable systems on board the ship to ensure 
+that bunkering can be conducted without causing danger to persons, the environment or the ship. 
+ 
+8.2 Functional requirements
+
+---
+
+extreme temperatures of the fuel without developing substantial stresses. 
+ 
+7.2.1.2 Provision shall be made to protect the piping, piping system and components and fuel 
+tanks from excessive stresses due to thermal movement and from movements of the fuel tank 
+and hull structure.  
+ 
+7.2.1.3 If the fuel gas contains heavier constituents that may condense in the system, means 
+for safely removing the liquid shall be fitted. 
+ 
+7.2.1.4 Low temperature piping shall be thermally isolated from the adjacent hull structure, 
+where necessary, to prevent the tempera ture of the hull from falling below the design 
+temperature of the hull material.","For piping with design temperatures colder than minus 55°C, only welded neck flanges shall be used."
+What is the goal of ventilation as stated in this document?,"I don't have enough information from the provided document to determine the goal of ventilation. The context only describes various requirements and regulations for ventilation systems in different spaces, but it does not explicitly state a goal for ventilation.","is closed; or 
+ 
+.2 the gas fuel piping shall be installed within a ventilated pipe or duct. The air 
+space between the gas fuel piping and the wall of the outer pipe or duct shall 
+be equipped with mechanical underpressure ventilation having a capacity of 
+at least 30 air changes per hour. This ventilation capacity may be reduced to 
+10 air changes per hour provided automatic filling of the duct with nitrogen 
+upon detection of gas is arranged for. The fan motors shall comply with the 
+required explosion protection in the installation area.  The ventilation outlet 
+shall be covered by a protection screen and placed in a position where no 
+flammable gas-air mixture may be ignited; or 
+ 
+.3 other solutions providing an equivalent safety level may also be accepted by 
+the Administration. 
+ 
+9.6.2 The connecting of gas piping and ducting to the gas injection valves shall be 
+completely covered by the ducting. The arra ngement shall facilitate replacement and/or
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 89 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+13.3.9 Non-hazardous spaces with entry openings to a hazardous area shall be arranged 
+with an airlock and be maintained at overpressure relative to the external hazardous area. The 
+overpressure ventilation shall be arranged according to the following: 
+ 
+.1 During initial start -up or after loss of overpressure ventilation, before 
+energizing any electrical installations not certified safe for  the space in  the 
+absence of pressurization, it shall be required to: 
+ 
+.1 proceed with purging (at least 5 air changes) or confirm by 
+measurements that the space is non-hazardous; and 
+ 
+.2 pressurize the space. 
+ 
+.2 Operation of the overpressure ventilation shall be monitored and in the event 
+of failure of the overpressure ventilation: 
+ 
+.1 an audible and visual alarm shall be given at a manned location; 
+and 
+ 
+.2 if overpressure cannot be immediately restored, automatic or
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 90 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+13.5.2 ESD protected machinery spaces shall have ventilation with a capacity of at least 30 air 
+changes per hour. The ventilation system shall ensure a good air circulation in all spaces, and 
+in particular ensure that any formation of gas pockets in the room are detected. As an alternative, 
+arrangements whereby under normal operation the machinery sp aces are ventilated with at 
+least 15 air changes an hour is acceptable provided that, if gas is detected in the machinery 
+space, the number of air changes will automatically be increased to 30 an hour. 
+ 
+13.5.3 For ESD protected machinery spaces the ventila tion arrangements shall provide 
+sufficient redundancy to ensure a high level of ventilation availability as defined in a standard 
+acceptable to the Organization.27 
+ 
+13.5.4 The number and power of the ventilation fans for ESD protected engine -rooms and
+
+---
+
+in the non-hazardous space shall be required. 
+ 
+13.4 Regulations for tank connection space 
+ 
+13.4.1 The tank connectio n space shall be provided with an effective mechanical forced 
+ventilation system of extraction type. A ventilation capacity of at least 30 air changes per hour 
+shall be provided. The rate of air changes may be reduced if other adequate means of 
+explosion p rotection are installed. The equivalence of alternative installations shall be 
+demonstrated by a risk assessment. 
+ 
+13.4.2 Approved automatic fail-safe fire dampers shall be fitted in the ventilation trunk for the 
+tank connection space. 
+ 
+13.5 Regulations for machinery spaces 
+ 
+13.5.1 The ventilation system for machinery spaces containing gas-fuelled consumers shall 
+be independent of all other ventilation systems. 
+ 
+                                                 
+26 Refer to IEC 60092-502:1999 Electrical Installations in Ships – Tankers – Special Features, table 5.","The goal of ventilation, as stated in this document, is to provide a safe and healthy working environment by removing or diluting hazardous substances from the air."
+What is the goal of explosion prevention as stated in this document?,"The goal of explosion prevention as stated in this document is:
+
+""The goal of this chapter is to provide for the prevention of explosions and for the limitation of effects from explosion."" (Section 12.1)","3.2.8 Sources of ignition in hazardous areas shall be minimized to reduce the probability of 
+explosions.
+
+---
+
+Code shall be provided for the fuel storage hold spaces and the ventilation trunk for fuel 
+containment system below deck, and for all other rooms of the fuel gas system where fire 
+cannot be excluded. 
+ 
+11.7.2 Smoke detectors alone shall not be considered sufficient for rapid detection of a fire. 
+ 
+12 EXPLOSION PREVENTION 
+ 
+12.1 Goal 
+ 
+The goal of this chapter is to provide for the prevention of explosions and for the limitation of 
+effects from explosion. 
+ 
+12.2 Functional requirements 
+ 
+This chapter is related to functional requirements in 3.2.2 to 3.2.5, 3.2.7, 3.2.8, 3.2.12 to 3.2.14 
+and 3.2.17. In particular the following apply: 
+ 
+The probability of explosions shall be reduced to a minimum by: 
+ 
+ .1 reducing number of sources of ignition; and 
+ 
+ .2 reducing the probability of formation of ignitable mixtures. 
+ 
+12.3 Regulations – General 
+ 
+12.3.1 Hazardous areas on open deck and other spaces not addressed in this chapter shall
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 13 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+4.2.3 The risks shall be analysed using acceptable and recognized risk analysis techniques, 
+and loss of function, component damage, fire, explosion and electric shock shall as a minimum 
+be considered. The analysis shall ensure that risks are eliminated wherever possible. Risks 
+which cannot be eliminated s hall be mitigated as necessary. Details of risks, and the means 
+by which they are mitigated, shall be documented to the satisfaction of the Administration. 
+ 
+4.3 Limitation of explosion consequences 
+ 
+An explosion in any space containing any potential sources of release 4 and potential ignition 
+sources shall not: 
+ 
+.1 cause damage to or disrupt the proper functioning of equipment/systems 
+located in any space other than that in which the incident occurs; 
+ 
+.2 damage the ship in such a way that flooding of water below the main deck or 
+any progressive flooding occur;
+
+---
+
+minimum through arrangement and system design, such as ventilation, detection and safety 
+actions. In the event of gas leakage or failure of the risk reducing measures, necessary safety 
+actions shall be initiated. 
+ 
+3.2.3 The design philosophy shall ensure that risk reducing measures and safety actions 
+for the gas fuel installation do not lead to an unacceptable loss of power. 
+ 
+3.2.4 Hazardous areas shall be restricted, as far as practicable, to minimize the potentia l 
+risks that might affect the safety of the ship, persons on board, and equipment. 
+ 
+3.2.5 Equipment installed in hazardous areas shall be minimized to that required for 
+operational purposes and shall be suitably and appropriately certified. 
+ 
+3.2.6 Unintended accumulation of explosive, flammable or toxic gas concentrations shall 
+be prevented. 
+ 
+3.2.7 System components shall be protected against external damages. 
+ 
+3.2.8 Sources of ignition in hazardous areas shall be minimized to reduce the probability of","The goal of explosion prevention, as stated in this document, is to prevent explosions from occurring in the first place. This is explicitly mentioned in section 12.1 of the document, which outlines the purpose and objectives of explosion prevention measures."
+"What is considered ""fuel"" in the context of these regulations?","I don't have enough information from the provided document to determine what is considered ""fuel"" in the context of these regulations.","9.5 Regulations for fuel distribution outside of machinery space ........................ 77 
+9.6 Regulations for fuel supply to consumers in gas-safe machinery spaces .... 78 
+9.7 Regulations for gas fuel supply to consumers in ESD-protected machinery 
+spaces .................................................................................................................. 78
+
+---
+
+5.6 Regulations for ESD-protected machinery spaces ........................................... 18 
+5.7 Regulations for location and protection of fuel piping .................................... 19 
+5.8 Regulations for fuel preparation room design .................................................. 19 
+5.9 Regulations for bilge systems ............................................................................ 19 
+5.10 Regulations for drip trays ................................................................................... 20 
+5.11 Regulations for arrangement of entrances and other openings in enclosed 
+spaces .................................................................................................................. 20 
+5.12 Regulations for airlocks ...................................................................................... 20 
+6 FUEL CONTAINMENT SYSTEM ............................................................................ 21
+
+---
+
+fuelled ship. 
+ 
+6.2 Functional requirements 
+ 
+This chapter relates to functional requirements in 3.2.1, 3.2.2, 3.2.5  and 3.2.8 to 3.2.17.  
+In particular the following apply: 
+ 
+ .1 the fuel containment system shall be so designed that a leak from the tank 
+or its connections does not endanger the ship, persons on board or  the 
+environment. Potential dangers to be avoided include: 
+ 
+.1 exposure of ship materials to temperatures below acceptable limits; 
+ 
+.2 flammable fuels spreading to locations with ignition sources; 
+ 
+.3 toxicity potential and risk of oxygen deficiency due to fuels and inert 
+gases; 
+ 
+.4 restriction of access to muster stations, escape routes and  
+life-saving appliances (LSA); and 
+ 
+.5 reduction in availability of LSA. 
+ 
+ .2 the pressure and temperature in the fuel tank shall be kept within the design 
+limits of the containment system and possible carriage requirement s of the 
+fuel;
+
+---
+
+6.9 Regulations for the maintaining of fuel storage condition .............................. 62 
+6.10 Regulations on atmospheric control within the fuel containment system ..... 63 
+6.11 Regulations on atmosphere control within fuel storage hold spaces (Fuel 
+containment systems other than type C independent tanks) ......................... 64 
+6.12 Regulations on environmental control of spaces surrounding type C 
+independent tanks ............................................................................................... 64 
+6.13 Regulations on inerting ....................................................................................... 64 
+6.14 Regulations on inert gas production and storage on board ............................ 65 
+7 MATERIAL AND GENERAL PIPE DESIGN ............................................................ 65 
+7.1 Goal ....................................................................................................................... 65","According to the regulations, ""fuel"" is considered to be natural gas, either in its liquefied or gaseous state. This definition applies throughout this part of the regulations. The composition of natural gas may vary depending on its source and processing."
+What are the two types of stresses that need to be determined separately from acceleration components and hull strain components due to deflection and torsion?,"I don't have enough information from the provided document to answer your question accurately. The context only mentions static and dynamic stresses, but it does not specify which two types of stresses need to be determined separately from acceleration components and hull strain components due to deflection and torsion.","MSC 95/22/Add.1 
+Annex 1, page 35 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+where: 
+ 
+ x.st, y.st, z.st, xy.st, xz.st and yz.st are static stresses; and 
+ 
+ x.dyn, y.dyn, z.dyn, xy.dyn, xz.dyn and yz.dyn are dynamic stresses, 
+ 
+each shall be determined separately from acceleration components and hull strain components 
+due to deflection and torsion. 
+ 
+6.4.12 Design conditions 
+ 
+All relevant failure modes shall be considered in the design for all relevant load scenarios and 
+design conditions. The design conditions are given in the earlier part of this chapter, and the 
+load scenarios are covered by 6.4.11.2. 
+ 
+6.4.12.1 Ultimate design condition 
+ 
+6.4.12.1.1 Structural capacity may be determined by testing, or by analysis, taking into 
+account both the elastic and plastic material properties, by simplified linear elastic analysis or 
+by the provisions of this Code: 
+ 
+.1 Plastic deformation and buckling shall be considered.
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 45 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+6.4.15.2.2.2 A three-dimensional analysis shall be carried out to evaluate the stress levels, 
+including interaction with the ship's hull. The model for this analysis shall include the liquefied 
+gas fuel tank with its supporting and keying system, as well as a reasonable part of the hull. 
+ 
+6.4.15.2.2.3 A complete analysis of the particular ship accelerations and motions in irregular 
+waves, and of the response of the ship and it s liquefied gas fuel tanks to these forces and 
+motions, shall be performed unless the data is available from similar ships. 
+ 
+6.4.15.2.3 Ultimate design condition 
+ 
+6.4.15.2.3.1 Plastic deformation 
+ 
+For type B independent tanks, primarily constructed of bodi es of revolution, the allowable 
+stresses shall not exceed: 
+ 
+ σm  ≤ f 
+ σL  ≤ 1.5f 
+ σb  ≤ 1.5F 
+ σL+σb  ≤ 1.5F 
+ σm+σb  ≤ 1.5F 
+ σm+σb+σg ≤ 3.0F 
+ σL+σb+σg ≤ 3.0F 
+ 
+where:
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 47 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+6.4.15.2.3.6 Stress categories 
+ 
+For the purpose of stress evaluation, stress categories are defined in this section as follows: 
+ 
+.1 Normal stress is the component of stress normal to the plane of reference. 
+ 
+.2 Membrane stress  is the component of normal stress that is un iformly 
+distributed and equal to the average value of the stress across the thickness 
+of the section under consideration. 
+ 
+.3 Bending stress  is the variable stress across the thickness of the section 
+under consideration, after the subtraction of the membrane stress. 
+ 
+.4 Shear stress is the component of the stress acting in the plane of reference. 
+ 
+.5 Primary stress  is a stress produced by the imposed loading, which is 
+necessary to balance the external forces and moments. The basic 
+characteristic of a primary stress is that it is not self-limiting. Primary stresses
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 50 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+6.4.15.3.2.4 Scantlings based on internal pressure shall be calculated as follows: 
+ 
+The thickness and form of pressure -containing parts of pressure vessels, under internal 
+pressure, as defined in 6.4.9.3.3.1, including flanges, shall be determined. These calculations 
+shall in all cases be based on accepted pressure vessel design theory.  Openings in 
+pressure-containing parts of pressure vessels shall be reinforced in accordance with a 
+recognized standard acceptable to the Administration. 
+ 
+6.4.15.3.2.5 Stress analysis in respect of static and dynamic loads shall be performed as 
+follows: 
+ 
+.1 pressure vessel scantlings shall be determined in accordance with 6.4.15.3.2.1 
+to 6.4.15.3.2.4 and 6.4.15.3.3; 
+ 
+.2 calculations of the loads and stresses in way of the supports and  the shell 
+attachment of the support shall be made. Loads referred to in  6.4.9.2","Static stresses and dynamic stresses need to be determined separately from acceleration components and hull strain components due to deflection and torsion. Static stresses include σx.st, σy.st, σz.st, τxy.st, τxz.st, and τyz.st, while dynamic stresses include σx.dyn, σy.dyn, σz.dyn, τxy.dyn, τxz.dyn, and τyz.dyn."
+What is the maximum value of Cw allowed when a failure can be reliably detected by means of leakage detection?,"For failures that can be reliably detected by means of leakage detection: 
+
+Cw shall be less than or equal to 0.5.",".8 For failures that cannot be detected by leakage but that c an be reliably 
+detected at the time of in-service inspections: 
+ 
+Cw shall be less than or equal to 0.5. 
+ 
+Predicted remaining failure development time, from the largest crack not 
+detectable by in -service inspection methods until reaching a critical state, 
+shall not be less than three (3) times the inspection interval. 
+ 
+.9 In particular locations of the tank where effective defect or crack 
+development detection cannot be assured, the following, more stringent, 
+fatigue acceptance criteria shall be applied as a minimum: 
+ 
+Cw shall be less than or equal to 0.1. 
+ 
+Predicted failure development time, from the assumed initial defect until 
+reaching a critical state, shall not be less than three (3) times the lifetime of 
+the tank. 
+ 
+Figure 6.4.3 – Simplified load distribution
+
+---
+
+MSC 95/22/Add.1 
+Annex 1, page 38 
+ 
+ 
+I:\MSC\95\MSC 95-22-ADD.1 (E).docx 
+Crack propagation analysis specified in 6. 4.12.2.7 the simplified load 
+distribution and sequence over a period of 15 days may be used. Such 
+distributions may be obtained as indicated in figure 6.4.3. Load distribution 
+and sequence for longer periods, such as in 6.4.12.2.8 and 6.4.12.2.9 shall 
+be approved by the Administration. 
+ 
+The arrangements shall comply with 6.4.12.2.7 to 6.4.12.2.9 as applicable. 
+ 
+.7 For failures that can be reliably detected by means of leakage detection: 
+ 
+Cw shall be less than or equal to 0.5. 
+ 
+Predicted remaining failure development time, from the point of detection of 
+leakage till reaching a critical state, shall not be less than 15  days unless 
+different regulations apply for ships engaged in particular voyages. 
+ 
+.8 For failures that cannot be detected by leakage but that c an be reliably 
+detected at the time of in-service inspections:
+
+---
+
+a visual inspection or other suitable means acceptable to the Administration; 
+ 
+.5 the methods required in 6.4.4.4 shall be approved by the Administration and 
+shall include, as a minimum: 
+ 
+.1 details on the size of defect acceptable and the location wi thin the 
+secondary barrier, before its liquid tight effectiveness is compromised; 
+ 
+.2 accuracy and range of values of the proposed method for detecting 
+defects in .1 above; 
+ 
+.3 scaling factors to be used in determining the acceptance criteria if 
+full-scale model testing is not undertaken; and 
+ 
+.4 effects of thermal and mechanical cyclic loading on the effectiveness 
+of the proposed test. 
+ 
+ .6 the secondary barrier shall fulfil its functional requirements at a static angle 
+of heel of 30°. 
+ 
+6.4.5 Partial secondary barriers and primary barrier small leak protection system 
+ 
+6.4.5.1 Partial secondary barriers as permitted in 6.4.2.3 shall be used with a small leak 
+protection system and meet all the regulations in 6.4.4.
+
+---
+
+possibility of leakages through the primary barrier cannot be excluded, shall be equipped with 
+a partial secondary barrier and small leak protection system capable of safely handling and 
+disposing of the leakages  (a critical state means that the cra ck develops into unstable 
+condition). 
+ 
+The arrangements shall comply with the following: 
+ 
+ .1 failure developments that can be reliably detected before reaching a critical 
+state (e.g. by gas detection or inspection) shall have a sufficiently long 
+development time for remedial actions to be taken; and 
+ 
+ .2 failure developments that cannot be safely detected before reaching  
+a critical state shall have a predicted development time that is much longer 
+than the expected lifetime of the tank. 
+ 
+6.4.2.4 No secondar y barrier is required for liquefied gas fuel containment systems, 
+e.g. type C independent tanks, where the probability for structural failures and leakages","The maximum value of Cw allowed is 0.5, when a failure can be reliably detected by means of leakage detection. This is specified to prevent predicted remaining failure development time from being less than 15 days until reaching a critical state."
