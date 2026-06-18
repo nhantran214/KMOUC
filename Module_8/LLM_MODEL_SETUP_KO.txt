@@ -1,0 +1,216 @@
+# LLM 모델 설정 가이드 — Module 8 (Neo4j + LLMs)
+
+이 가이드는 Module 8 노트북(그래프 추출, RAG 답변, text-to-Cypher, 에이전트)에서 사용하는 **LLM**을 구성합니다.
+
+다음 문서와 함께 사용하세요:
+
+- `NEO4J_SETUP.md` — Neo4j 데이터베이스
+- `Module_8_Building_Knowledge_Graphs_with_LLMs.ipynb` — LLM으로 텍스트에서 그래프 구축
+- `Module_8_Practical_Knowledge_Graph_Applications.ipynb` — 실무 지식 그래프(KG) 응용(Part 8: LLM + Cypher Q&A)
+- `Module_8_Using_Knowledge_Graph_with_LangChain.ipynb` — LangChain + Neo4j 연동
+- `Module_8_Using_Knowledge_Graph_with_LlamaIndex.ipynb` — LlamaIndex + Neo4j (`Neo4jPropertyGraphStore`, `Neo4jVectorStore`)
+- `Module_8_Warehouse_Inventory_Management_with_Knowledge_Graphs.ipynb` — 창고/재고 KG(Part 10: LLM + Cypher Q&A)
+
+---
+
+## 개요
+
+이 과정에서는 LLM을 사용해 비정형 텍스트를 그래프 노드와 관계로 변환합니다.
+
+| 경로 | `LLM_BACKEND` | 노트북에서 모델을 호출하는 방식 |
+|------|---------------|----------------------------------|
+| **Ollama + runner (권장)** | `ollama` | Subprocess → `ollama_model_runner.py` → Ollama HTTP API |
+| **OpenAI (클라우드)** | `openai` | `langchain-openai` (`ChatOpenAI`) |
+
+**Ollama + runner** 경로는 **Module 4 / Module 5**와 동일합니다. Jupyter 커널이 모델을 직접 호스팅하지 않고, 작은 스크립트가 `http://localhost:11434/api/generate`를 호출합니다. 긴 추출 작업에서 더 안정적입니다.
+
+---
+
+## 사전 요구 사항
+
+1. `NEO4J_SETUP.md`의 Python 패키지(노트북 Step 0a).
+2. `Module_8/.env`의 Neo4j 변수.
+3. 파일 존재: `Module_8/ollama_model_runner.py`(이 모듈에 포함).
+
+---
+
+## 옵션 1 — Ollama + `ollama_model_runner.py` (권장)
+
+### Step 1 — Ollama 설치
+
+[https://ollama.com](https://ollama.com)에서 다운로드하세요.
+
+### Step 2 — 서비스 시작
+
+```bash
+ollama serve
+```
+
+노트북을 사용하는 동안 이 프로세스를 계속 실행하세요.
+
+### Step 3 — 모델 pull
+
+```bash
+ollama pull llama3.2:3b
+```
+
+추출 품질을 높이려면 더 큰 모델:
+
+```bash
+ollama pull llama3.1:8b
+```
+
+확인:
+
+```bash
+ollama list
+```
+
+### Step 4 — 환경 변수 설정
+
+`Module_8/.env`를 생성하세요(`.env.example`에서 복사):
+
+```dotenv
+LLM_BACKEND=ollama
+OLLAMA_HOST=http://localhost:11434
+OLLAMA_MODEL=llama3.2:3b
+OLLAMA_TEMPERATURE=0
+OLLAMA_MAX_TOKENS=2048
+```
+
+셸 export(선택):
+
+```bash
+export LLM_BACKEND=ollama
+export OLLAMA_HOST=http://localhost:11434
+export OLLAMA_MODEL=llama3.2:3b
+export OLLAMA_MAX_TOKENS=2048
+```
+
+> **그래프 추출**은 짧은 채팅 데모보다 더 많은 토큰이 필요합니다. `OLLAMA_MAX_TOKENS=2048`(또는 머신이 허용하면 더 높은 값)을 사용하세요.
+
+### Step 5 — runner 스모크 테스트(터미널)
+
+`Module_8`에서:
+
+```bash
+cd /path/to/KMOU_Course/Module_8
+
+python ollama_model_runner.py \
+  --host http://localhost:11434 \
+  --models llama3.2:3b \
+  --prompt "Reply with exactly: Ollama OK" \
+  --temperature 0 \
+  --max-tokens 32
+```
+
+JSON에 `"status": "ok"`와 `outputs[0].response`의 짧은 응답이 포함되어야 합니다.
+
+### Step 6 — 노트북에서 확인
+
+`Module_8_Building_Knowledge_Graphs_with_LLMs.ipynb`에서 **Step 0b → 0d → 0e**를 실행하세요.
+
+다음과 같이 표시되어야 합니다:
+
+- `OLLAMA_RUNNER: .../Module_8/ollama_model_runner.py`
+- `Ollama runner smoke test: OK`
+- `LLM ready for LLMGraphTransformer (backend=ollama)`
+
+---
+
+## 옵션 2 — OpenAI (클라우드)
+
+### Step 1 — API 키
+
+[https://platform.openai.com](https://platform.openai.com)에서 키를 생성하세요.
+
+### Step 2 — 환경 변수
+
+```dotenv
+LLM_BACKEND=openai
+OPENAI_MODEL=gpt-4o-mini
+OPENAI_API_KEY=sk-...
+```
+
+필요 시 설치:
+
+```bash
+python -m pip install langchain-openai
+```
+
+이 경로에서는 노트북이 `ChatOpenAI`를 직접 사용합니다(`ollama_model_runner.py` 없음).
+
+---
+
+## `ollama_model_runner.py` 동작 방식
+
+| 인수 | 용도 |
+|----------|---------|
+| `--host` | Ollama 기본 URL(기본값 `http://localhost:11434`) |
+| `--models` | 단일 또는 쉼표로 구분된 모델, 예: `llama3.2:3b` 또는 `llama3.1:8b,mistral:7b` |
+| `--prompt` / `--prompt-file` | 입력 텍스트 |
+| `--temperature` | 샘플링 temperature(과정 기본값 `0`) |
+| `--max-tokens` | `num_predict` 상한(과정 기본값 KG 추출용 `2048`) |
+
+스크립트는 stdout에 **JSON 객체 하나**를 출력합니다. 노트북은 `outputs[0].response`를 파싱해 LangChain의 `LLMGraphTransformer`에 얇은 `OllamaRunnerLLM` 래퍼로 전달합니다.
+
+---
+
+## 문제 해결
+
+### `ollama_model_runner.py not found`
+
+작업 디렉터리를 `Module_8`로 설정해 노트북을 실행하거나, 해당 폴더에 파일을 유지하세요. 노트북은 다음 순서로 경로를 확인합니다:
+
+1. `Module_8/ollama_model_runner.py`
+2. `Module_4/ollama_model_runner.py`(대체 경로)
+
+### `localhost:11434` 연결 거부
+
+- `ollama serve` 시작
+- `OLLAMA_HOST`가 Ollama URL과 일치하는지 확인
+
+### 모델을 찾을 수 없음
+
+```bash
+ollama pull <model-from-OLLAMA_MODEL>
+ollama list
+```
+
+### 노트북에서 runner가 오류로 종료됨
+
+발생한 `RuntimeError`를 읽으세요 — subprocess의 stderr가 포함됩니다. 흔한 원인:
+
+- Ollama 미실행
+- 잘못된 모델 이름
+- 메모리 부족(`llama3.2:3b` 시도)
+
+### 추출이 느리거나 타임아웃
+
+- 테스트용으로 더 작은 모델 사용
+- 응답이 잘릴 때만 `OLLAMA_MAX_TOKENS` 증가
+- `ollama pull` 직후 첫 추출은 느릴 수 있음(모델 로드)
+
+### OpenAI 인증 오류
+
+- `Module_8/.env`에 `OPENAI_API_KEY` 설정
+- `LLM_BACKEND=openai` 설정
+
+### 그래프 추출 품질이 낮음
+
+- `llama3.1:8b` 또는 `gpt-4o-mini` 권장
+- 스키마 기반 추출 사용(노트북 Section 2.3)
+
+---
+
+## 보안 참고
+
+- API 키가 포함된 `Module_8/.env`를 커밋하지 마세요.
+- Ollama는 로컬에서 실행됩니다 — 기본 경로에는 클라우드 API 키가 필요하지 않습니다.
+
+설정이 완료되면 Module 8 노트북에서 **Step 0**부터 계속 진행하세요:
+
+- `Module_8_Building_Knowledge_Graphs_with_LLMs.ipynb`
+- `Module_8_Practical_Knowledge_Graph_Applications.ipynb` (Part 8)
+- `Module_8_Using_Knowledge_Graph_with_LangChain.ipynb`
+- `Module_8_Warehouse_Inventory_Management_with_Knowledge_Graphs.ipynb` (Part 10)

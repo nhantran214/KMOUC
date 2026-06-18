@@ -1,23 +1,32 @@
 question,ground_truth,needs_graph,answer,contexts,retrieval_sec,generation_sec,total_sec,eval_count,pipeline
-Which port is the largest in Europe according to the lab data?,The Port of Rotterdam is the largest port in Europe.,False,"I do not have enough information from the provided context to determine which port is the largest in Europe according to the lab data, but it does mention that The Port of Rotterdam is the largest port in Europe.","The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
+Which port is the largest in Europe according to the lab data?,The Port of Rotterdam is the largest port in Europe.,False,"I do not have enough information from the provided context to answer which port is the second largest or any other port in Europe, only that the Port of Rotterdam is the largest.","The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
 
 ---
 
-The Port of Singapore is a leading transshipment hub in Southeast Asia.
+The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
 
 ---
 
-Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.",0.0062231289921328425,0.5562900259392336,0.5625131549313664,42,vector_rag
+The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.",0.006370146060362458,0.5173450179863721,0.5237151640467346,36,vector_rag
 Which country is the Port of Singapore located in?,The Port of Singapore is located in Singapore.,True,I do not have enough information from the provided context to determine which country the Port of Singapore is located in.,"The Port of Singapore is a leading transshipment hub in Southeast Asia.
 
 ---
 
+The Port of Singapore is a leading transshipment hub in Southeast Asia.
+
+---
+
+The Port of Singapore is a leading transshipment hub in Southeast Asia.",0.007044637110084295,0.40086221299134195,0.40790685010142624,23,vector_rag
+Which organization operates in the Port of Rotterdam?,Maersk operates in the Port of Rotterdam.,True,I do not have enough information from the provided context to determine which organization operates in the Port of Rotterdam.,"The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
+
+---
+
 The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
 
 ---
 
-The Panama Canal connects the Atlantic and Pacific oceans and shortens voyages for many carriers.",0.008770542917773128,0.41250374901574105,0.4212742919335142,23,vector_rag
-Which organization operates in the Port of Rotterdam?,Maersk operates in the Port of Rotterdam.,True,I do not have enough information from the provided context to determine which organization operates in the Port of Rotterdam.,"The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
+The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.",0.010358561063185334,0.4048914739396423,0.41525003500282764,22,vector_rag
+What route does Maersk use according to the graph?,Maersk uses the Panama Canal route.,True,"I do not have enough information from the provided context to determine which specific route Maersk uses, only that it uses routes such as the Panama Canal.","Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
 
 ---
 
@@ -25,17 +34,8 @@ Maersk is a Danish shipping company that operates vessels and uses routes such a
 
 ---
 
-The Port of Singapore is a leading transshipment hub in Southeast Asia.",0.00667710998095572,0.4051084369421005,0.41178554692305624,22,vector_rag
-What route does Maersk use according to the graph?,Maersk uses the Panama Canal route.,True,"I do not have enough information from the provided context to determine which specific route Maersk uses according to the graph, as there is no mention of a graph or any specific routes used by Maersk.","Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
-
----
-
-The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
-
----
-
-The Port of Singapore is a leading transshipment hub in Southeast Asia.",0.00709239998832345,0.5689511870732531,0.5760435870615765,43,vector_rag
-How is Maersk connected to the Panama Canal?,Maersk is connected to the Panama Canal through a USES_ROUTE relationship.,True,"Since Maersk operates vessels and uses routes such as the Panama Canal, it can be inferred that Maersk is connected to the Panama Canal through its use of this route for transportation purposes.","Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
+Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.",0.009878953918814659,0.509349785046652,0.5192287389654666,32,vector_rag
+How is Maersk connected to the Panama Canal?,Maersk is connected to the Panama Canal through a USES_ROUTE relationship.,True,"Maersk is connected to the Panama Canal because it operates vessels and uses this route, which connects the Atlantic and Pacific oceans, thereby shortening voyages for many carriers.","Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
 
 ---
 
@@ -43,70 +43,79 @@ The Panama Canal connects the Atlantic and Pacific oceans and shortens voyages f
 
 ---
 
-The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.",0.009320679935626686,0.538635689066723,0.5479563690023497,40,vector_rag
+Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.",0.009690703824162483,0.4938504791352898,0.5035411829594523,36,vector_rag
 What do the Panama Canal connect?,The Panama Canal connects the Atlantic and Pacific oceans.,False,The Atlantic and Pacific oceans.,"The Panama Canal connects the Atlantic and Pacific oceans and shortens voyages for many carriers.
 
 ---
 
-Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
+The Panama Canal connects the Atlantic and Pacific oceans and shortens voyages for many carriers.
 
 ---
 
-The Port of Singapore is a leading transshipment hub in Southeast Asia.",0.009313824004493654,0.3118508269544691,0.32116465095896274,7,vector_rag
-Which port is described as a leading transshipment hub in Southeast Asia?,The Port of Singapore is a leading transshipment hub in Southeast Asia.,False,The Port of Singapore is described as a leading transshipment hub in Southeast Asia.,"The Port of Singapore is a leading transshipment hub in Southeast Asia.
+The Panama Canal connects the Atlantic and Pacific oceans and shortens voyages for many carriers.",0.009558712830767035,0.2885111919604242,0.2980699047911912,7,vector_rag
+Which port is described as a leading transshipment hub in Southeast Asia?,The Port of Singapore is a leading transshipment hub in Southeast Asia.,False,The Port of Singapore.,"The Port of Singapore is a leading transshipment hub in Southeast Asia.
 
 ---
 
-The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
+The Port of Singapore is a leading transshipment hub in Southeast Asia.
 
 ---
 
-Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.",0.018526948057115078,0.34847738000098616,0.36700432805810124,17,vector_rag
+The Port of Singapore is a leading transshipment hub in Southeast Asia.",0.007265872089192271,0.2655657231807709,0.27283159526996315,6,vector_rag
 What country is Maersk associated with in the lab graph?,Maersk is a Danish shipping company (Denmark).,False,Denmark.,"Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
 
 ---
 
+Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
+
+---
+
+Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.",0.008181384997442365,0.258999097160995,0.26718048215843737,4,vector_rag
+Which port is the largest in Europe according to the lab data?,The Port of Rotterdam is the largest port in Europe.,False,The Port of Rotterdam is the largest port in Europe according to the lab data.,"The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
+
+---
+
 The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
 
 ---
 
-The Port of Singapore is a leading transshipment hub in Southeast Asia.",0.006717120995745063,0.28180284705013037,0.28851996804587543,4,vector_rag
-Which port is the largest in Europe according to the lab data?,The Port of Rotterdam is the largest port in Europe.,False,"I do not have enough information from the provided context to determine which port is the largest in Europe according to the lab data. The text only mentions that the Port of Rotterdam is a major hub, but it does not confirm if it is the largest in Europe.","The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
-
----
-
-The Port of Singapore is a leading transshipment hub in Southeast Asia.
-
----
-
-Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
+The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
 
 ---
 
 [Graph facts]
 Chunk chunk_rotterdam mentions Port_of_Rotterdam; LOCATED_IN -> Netherlands
-Chunk chunk_rotterdam mentions Port_of_Rotterdam; OPERATES_IN -> Maersk
-Chunk chunk_singapore mentions Port_of_Singapore; LOCATED_IN -> Singapore
-Chunk chunk_maersk mentions Maersk; OPERATES_IN -> Port_of_Rotterdam
-Chunk chunk_maersk mentions Maersk; USES_ROUTE -> Panama_Canal",0.009391507017426193,0.6496110189473256,0.6590025259647518,53,graphrag
+Chunk chunk_rotterdam mentions Port_of_Rotterdam; OPERATES_IN -> Maersk",0.010311187012121081,0.37092604488134384,0.3812372318934649,17,graphrag
 Which country is the Port of Singapore located in?,The Port of Singapore is located in Singapore.,True,The country where the Port of Singapore is located is Singapore.,"The Port of Singapore is a leading transshipment hub in Southeast Asia.
 
 ---
 
-The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
+The Port of Singapore is a leading transshipment hub in Southeast Asia.
 
 ---
 
-The Panama Canal connects the Atlantic and Pacific oceans and shortens voyages for many carriers.
+The Port of Singapore is a leading transshipment hub in Southeast Asia.
 
 ---
 
 [Graph facts]
-Chunk chunk_singapore mentions Port_of_Singapore; LOCATED_IN -> Singapore
+Chunk chunk_singapore mentions Port_of_Singapore; LOCATED_IN -> Singapore",0.008790490915998816,0.3459073069971055,0.3546977979131043,13,graphrag
+Which organization operates in the Port of Rotterdam?,Maersk operates in the Port of Rotterdam.,True,I do not have enough information from the provided context.,"The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
+
+---
+
+The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
+
+---
+
+The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
+
+---
+
+[Graph facts]
 Chunk chunk_rotterdam mentions Port_of_Rotterdam; LOCATED_IN -> Netherlands
-Chunk chunk_rotterdam mentions Port_of_Rotterdam; OPERATES_IN -> Maersk
-Chunk chunk_panama mentions Panama_Canal; USES_ROUTE -> Maersk",0.012831598985940218,0.36497572204098105,0.3778073210269213,13,graphrag
-Which organization operates in the Port of Rotterdam?,Maersk operates in the Port of Rotterdam.,True,I do not have enough information from the provided context to determine which organization operates in the Port of Rotterdam.,"The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
+Chunk chunk_rotterdam mentions Port_of_Rotterdam; OPERATES_IN -> Maersk",0.011886698193848133,0.34470847295597196,0.3565951711498201,12,graphrag
+What route does Maersk use according to the graph?,Maersk uses the Panama Canal route.,True,"According to the graph, Maersk uses the route: **Panama Canal**.","Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
 
 ---
 
@@ -114,35 +123,14 @@ Maersk is a Danish shipping company that operates vessels and uses routes such a
 
 ---
 
-The Port of Singapore is a leading transshipment hub in Southeast Asia.
+Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
 
 ---
 
 [Graph facts]
-Chunk chunk_rotterdam mentions Port_of_Rotterdam; LOCATED_IN -> Netherlands
-Chunk chunk_rotterdam mentions Port_of_Rotterdam; OPERATES_IN -> Maersk
-Chunk chunk_maersk mentions Maersk; OPERATES_IN -> Port_of_Rotterdam
 Chunk chunk_maersk mentions Maersk; USES_ROUTE -> Panama_Canal
-Chunk chunk_singapore mentions Port_of_Singapore; LOCATED_IN -> Singapore",0.015291647985577583,0.3894880120642483,0.4047796600498259,22,graphrag
-What route does Maersk use according to the graph?,Maersk uses the Panama Canal route.,True,"According to the graph facts, Maersk uses the Panama Canal route.","Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
-
----
-
-The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
-
----
-
-The Port of Singapore is a leading transshipment hub in Southeast Asia.
-
----
-
-[Graph facts]
-Chunk chunk_maersk mentions Maersk; OPERATES_IN -> Port_of_Rotterdam
-Chunk chunk_maersk mentions Maersk; USES_ROUTE -> Panama_Canal
-Chunk chunk_rotterdam mentions Port_of_Rotterdam; LOCATED_IN -> Netherlands
-Chunk chunk_rotterdam mentions Port_of_Rotterdam; OPERATES_IN -> Maersk
-Chunk chunk_singapore mentions Port_of_Singapore; LOCATED_IN -> Singapore",0.012180508929304779,0.37450518703553826,0.38668569596484303,16,graphrag
-How is Maersk connected to the Panama Canal?,Maersk is connected to the Panama Canal through a USES_ROUTE relationship.,True,Maersk is connected to the Panama Canal through a route it uses.,"Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
+Chunk chunk_maersk mentions Maersk; OPERATES_IN -> Port_of_Rotterdam",0.009322106139734387,0.3867754109669477,0.39609751710668206,19,graphrag
+How is Maersk connected to the Panama Canal?,Maersk is connected to the Panama Canal through a USES_ROUTE relationship.,True,"Maersk is connected to the Panama Canal through a route, as indicated by the graph fact: ""Chunk chunk_maersk mentions Maersk; USES_ROUTE -> Panama_Canal"". This means that Maersk uses the Panama Canal as one of its routes.","Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
 
 ---
 
@@ -150,21 +138,33 @@ The Panama Canal connects the Atlantic and Pacific oceans and shortens voyages f
 
 ---
 
-The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
+Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
 
 ---
 
 [Graph facts]
-Chunk chunk_maersk mentions Maersk; OPERATES_IN -> Port_of_Rotterdam
 Chunk chunk_maersk mentions Maersk; USES_ROUTE -> Panama_Canal
-Chunk chunk_panama mentions Panama_Canal; USES_ROUTE -> Maersk
-Chunk chunk_rotterdam mentions Port_of_Rotterdam; LOCATED_IN -> Netherlands
-Chunk chunk_rotterdam mentions Port_of_Rotterdam; OPERATES_IN -> Maersk",0.012946960981935263,0.3577463119290769,0.3706932729110122,16,graphrag
+Chunk chunk_maersk mentions Maersk; OPERATES_IN -> Port_of_Rotterdam
+Chunk chunk_panama mentions Panama_Canal; USES_ROUTE -> Maersk",0.010441859951242805,0.6459359438158572,0.6563778037671,56,graphrag
 What do the Panama Canal connect?,The Panama Canal connects the Atlantic and Pacific oceans.,False,The Panama Canal connects the Atlantic and Pacific oceans.,"The Panama Canal connects the Atlantic and Pacific oceans and shortens voyages for many carriers.
 
 ---
 
-Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
+The Panama Canal connects the Atlantic and Pacific oceans and shortens voyages for many carriers.
+
+---
+
+The Panama Canal connects the Atlantic and Pacific oceans and shortens voyages for many carriers.
+
+---
+
+[Graph facts]
+Chunk chunk_panama mentions Panama_Canal; USES_ROUTE -> Maersk",0.009769463911652565,0.34735067398287356,0.3571201378945261,11,graphrag
+Which port is described as a leading transshipment hub in Southeast Asia?,The Port of Singapore is a leading transshipment hub in Southeast Asia.,False,The Port of Singapore.,"The Port of Singapore is a leading transshipment hub in Southeast Asia.
+
+---
+
+The Port of Singapore is a leading transshipment hub in Southeast Asia.
 
 ---
 
@@ -173,15 +173,12 @@ The Port of Singapore is a leading transshipment hub in Southeast Asia.
 ---
 
 [Graph facts]
-Chunk chunk_panama mentions Panama_Canal; USES_ROUTE -> Maersk
-Chunk chunk_maersk mentions Maersk; OPERATES_IN -> Port_of_Rotterdam
-Chunk chunk_maersk mentions Maersk; USES_ROUTE -> Panama_Canal
-Chunk chunk_singapore mentions Port_of_Singapore; LOCATED_IN -> Singapore",0.008396940072998405,0.3256536469561979,0.3340505870291963,11,graphrag
-Which port is described as a leading transshipment hub in Southeast Asia?,The Port of Singapore is a leading transshipment hub in Southeast Asia.,False,The Port of Singapore is described as a leading transshipment hub in Southeast Asia.,"The Port of Singapore is a leading transshipment hub in Southeast Asia.
+Chunk chunk_singapore mentions Port_of_Singapore; LOCATED_IN -> Singapore",0.011535070138052106,0.29714726912789047,0.3086823392659426,6,graphrag
+What country is Maersk associated with in the lab graph?,Maersk is a Danish shipping company (Denmark).,False,Maersk is associated with Denmark in the lab graph.,"Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
 
 ---
 
-The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
+Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
 
 ---
 
@@ -190,26 +187,5 @@ Maersk is a Danish shipping company that operates vessels and uses routes such a
 ---
 
 [Graph facts]
-Chunk chunk_singapore mentions Port_of_Singapore; LOCATED_IN -> Singapore
-Chunk chunk_rotterdam mentions Port_of_Rotterdam; LOCATED_IN -> Netherlands
-Chunk chunk_rotterdam mentions Port_of_Rotterdam; OPERATES_IN -> Maersk
-Chunk chunk_maersk mentions Maersk; OPERATES_IN -> Port_of_Rotterdam
-Chunk chunk_maersk mentions Maersk; USES_ROUTE -> Panama_Canal",0.015660473029129207,0.3760631870245561,0.3917236600536853,17,graphrag
-What country is Maersk associated with in the lab graph?,Maersk is a Danish shipping company (Denmark).,False,I do not have enough information from the provided context.,"Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.
-
----
-
-The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.
-
----
-
-The Port of Singapore is a leading transshipment hub in Southeast Asia.
-
----
-
-[Graph facts]
-Chunk chunk_maersk mentions Maersk; OPERATES_IN -> Port_of_Rotterdam
 Chunk chunk_maersk mentions Maersk; USES_ROUTE -> Panama_Canal
-Chunk chunk_rotterdam mentions Port_of_Rotterdam; LOCATED_IN -> Netherlands
-Chunk chunk_rotterdam mentions Port_of_Rotterdam; OPERATES_IN -> Maersk
-Chunk chunk_singapore mentions Port_of_Singapore; LOCATED_IN -> Singapore",0.011786613962613046,0.349839249975048,0.36162586393766105,12,graphrag
+Chunk chunk_maersk mentions Maersk; OPERATES_IN -> Port_of_Rotterdam",0.008578493958339095,0.33105525001883507,0.33963374397717416,13,graphrag

@@ -423,7 +423,7 @@ cells.append(
     md(
         "#### Step 0d.3 — LlamaIndex `CustomLLM` adapter",
         "",
-        "- **`OllamaRunnerLLM`** subclasses **`CustomLLM`** and implements `complete(prompt)`.",
+        "- **`OllamaRunnerLLM`** subclasses **`CustomLLM`** and implements `complete()` and `stream_complete()`.",
         "- All later sections use **`Settings.llm`** (query engines, `TextToCypherRetriever`, `ReActAgent`).",
     )
 )
@@ -431,7 +431,12 @@ cells.append(
 cells.append(
     code(
         "# Step 0d.3 — LlamaIndex CustomLLM for the Ollama runner",
-        "from llama_index.core.llms import CustomLLM, CompletionResponse, LLMMetadata",
+        "from llama_index.core.llms import (",
+        "    CustomLLM,",
+        "    CompletionResponse,",
+        "    CompletionResponseGen,",
+        "    LLMMetadata,",
+        ")",
         "",
         "",
         "class OllamaRunnerLLM(CustomLLM):",
@@ -448,6 +453,16 @@ cells.append(
         "",
         "    def complete(self, prompt: str, formatted: bool = False, **kwargs: Any) -> CompletionResponse:",
         "        return CompletionResponse(text=call_ollama_runner(prompt, model=self.model))",
+        "",
+        "    def stream_complete(",
+        "        self, prompt: str, formatted: bool = False, **kwargs: Any",
+        "    ) -> CompletionResponseGen:",
+        "        # Runner returns the full response; yield token-by-token for LlamaIndex API compatibility.",
+        "        text = call_ollama_runner(prompt, model=self.model)",
+        "        response = \"\"",
+        "        for token in text:",
+        "            response += token",
+        "            yield CompletionResponse(text=response, delta=token)",
     )
 )
 
@@ -740,6 +755,8 @@ cells.append(
         "- `text` — embedded and searched in Section 3.2.",
         "- `source` — provenance (`course_seed` here).",
         "- `id` — links to vector metadata and GraphRAG expansion.",
+        "",
+        "Chunk IDs are prefixed with `llamaindex_` so they stay unique when you share a Neo4j database with other course labs (for example Module 3's `LangChainLab` chunks, which also use the `:Chunk` label).",
     )
 )
 
@@ -748,22 +765,22 @@ cells.append(
         "# 3.1.3c — Seed document chunks (text for vector index)",
         "chunks = [",
         "    {",
-        "        'id': 'chunk_rotterdam',",
+        "        'id': 'llamaindex_chunk_rotterdam',",
         "        'text': 'The Port of Rotterdam is the largest port in Europe and a major hub for container shipping.',",
         "        'source': 'course_seed',",
         "    },",
         "    {",
-        "        'id': 'chunk_maersk',",
+        "        'id': 'llamaindex_chunk_maersk',",
         "        'text': 'Maersk is a Danish shipping company that operates vessels and uses routes such as the Panama Canal.',",
         "        'source': 'course_seed',",
         "    },",
         "    {",
-        "        'id': 'chunk_panama',",
+        "        'id': 'llamaindex_chunk_panama',",
         "        'text': 'The Panama Canal connects the Atlantic and Pacific oceans and shortens voyages for many carriers.',",
         "        'source': 'course_seed',",
         "    },",
         "    {",
-        "        'id': 'chunk_singapore',",
+        "        'id': 'llamaindex_chunk_singapore',",
         "        'text': 'The Port of Singapore is a leading transshipment hub in Southeast Asia.',",
         "        'source': 'course_seed',",
         "    },",
@@ -796,10 +813,10 @@ cells.append(
     code(
         "# 3.1.3d — Link chunks to entities (for GraphRAG expansion)",
         "links = [",
-        "    ('chunk_rotterdam', 'Port_of_Rotterdam'),",
-        "    ('chunk_maersk', 'Maersk'),",
-        "    ('chunk_panama', 'Panama_Canal'),",
-        "    ('chunk_singapore', 'Port_of_Singapore'),",
+        "    ('llamaindex_chunk_rotterdam', 'Port_of_Rotterdam'),",
+        "    ('llamaindex_chunk_maersk', 'Maersk'),",
+        "    ('llamaindex_chunk_panama', 'Panama_Canal'),",
+        "    ('llamaindex_chunk_singapore', 'Port_of_Singapore'),",
         "]",
         "for chunk_id, entity_id in links:",
         "    run_cypher(",
@@ -900,7 +917,7 @@ cells.append(
         "",
         "| Parameter | Value | Why |",
         "|-----------|-------|-----|",
-        "| `max_iterations` | 5 | Prevents infinite tool loops |",
+        "| `max_iterations` | 5 (passed to `.run()`) | Prevents infinite tool loops |",
         "| `verbose` | True | Shows reasoning in notebook output |",
     )
 )
@@ -910,11 +927,10 @@ cells.append(
         "# 3.1.4b — Build LlamaIndex ReActAgent",
         "from llama_index.core.agent import ReActAgent",
         "",
-        "agent = ReActAgent.from_tools(",
-        "    agent_tools,",
+        "agent = ReActAgent(",
+        "    tools=agent_tools,",
         "    llm=Settings.llm,",
         "    verbose=True,",
-        "    max_iterations=5,",
         ")",
         "print('ReActAgent ready (run Section 3.3 before natural-language tool works).')",
     )
@@ -932,7 +948,10 @@ cells.append(
     code(
         "# 3.1.4c — Example agent question (preview)",
         "if CYPHER_QUERY_ENGINE is not None:",
-        "    response = agent.query('Which organization operates in the Port of Rotterdam?')",
+        "    response = await agent.run(",
+        "        'Which organization operates in the Port of Rotterdam?',",
+        "        max_iterations=5,",
+        "    )",
         "    print(response)",
         "else:",
         "    print('Skip until CYPHER_QUERY_ENGINE is defined in Section 3.3 (then run cell 3.3.4b).')",
@@ -1380,7 +1399,7 @@ cells.append(
         "text_to_cypher_retriever = TextToCypherRetriever(",
         "    graph_store,",
         "    llm=Settings.llm,",
-        "    text_to_cypher_template=PromptTemplate(graph_store.text_to_cypher_template),",
+        "    text_to_cypher_template=graph_store.text_to_cypher_template,",
         "    response_template=DEFAULT_RESPONSE_TEMPLATE,",
         ")",
         "CYPHER_QUERY_ENGINE = RetrieverQueryEngine.from_args(",
@@ -1435,7 +1454,7 @@ cells.append(
     code(
         "# 3.3.3 — Custom text-to-Cypher template (lab scope hint)",
         "LAB_CYPHER_TEMPLATE = (",
-        "    graph_store.text_to_cypher_template",
+        "    graph_store.text_to_cypher_template.template",
         "    + '\\n\\nOnly use nodes labeled LlamaIndexLab from this course lab.'",
         ")",
         "filtered_retriever = TextToCypherRetriever(",
@@ -1488,7 +1507,10 @@ cells.append(
 cells.append(
     code(
         "# 3.3.4b — Re-run agent now that CYPHER_QUERY_ENGINE exists",
-        "response = agent.query('Which organization operates in the Port of Rotterdam?')",
+        "response = await agent.run(",
+        "    'Which organization operates in the Port of Rotterdam?',",
+        "    max_iterations=5,",
+        ")",
         "print(response)",
     )
 )
