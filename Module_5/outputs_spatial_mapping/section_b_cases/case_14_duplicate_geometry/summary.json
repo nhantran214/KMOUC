@@ -1,0 +1,6 @@
+{
+  "case_id": "CASE_14_DUPLICATE_GEOMETRY",
+  "case_name": "Duplicate geometry anomaly detection",
+  "evaluated_rows": 17,
+  "issue_count": 0
+}

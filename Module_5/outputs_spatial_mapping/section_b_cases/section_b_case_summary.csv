@@ -1,0 +1,15 @@
+case_id,case_name,evaluated_rows,issue_count,roi
+CASE_01_ZONE_BASED,Zone-based symbol + text detection,2,0,"{'x_min': 0, 'y_min': 0, 'x_max': 448, 'y_max': 384}"
+CASE_02_VALVE_ONLY,Valve-only detection and association,18,0,
+CASE_03_TAG_PATTERN,Tag format and naming compliance,18,1,
+CASE_04_UNIQUENESS,One tag to one equipment uniqueness,18,1,
+CASE_05_CROSS_SHEET_LINE_CONSISTENCY,Cross-sheet line consistency,15,2,
+CASE_06_SERVICE_COMPATIBILITY,Service-to-symbol compatibility,15,1,
+CASE_07_LIFECYCLE,Equipment lifecycle governance,15,1,
+CASE_08_MANDATORY_ANNOTATION,Mandatory annotation completeness,18,3,
+CASE_09_DISTANCE_DIRECTION,Distance + direction constrained association,18,6,
+CASE_10_ZONE_WHITELIST,Zone class whitelist policy,18,12,
+CASE_11_REVISION_DELTA,Revision delta verification,18,3,
+CASE_12_OCR_CONFIDENCE,OCR confidence governance,18,6,
+CASE_13_CRITICAL_STRICT,Critical equipment strict mode,15,4,
+CASE_14_DUPLICATE_GEOMETRY,Duplicate geometry anomaly detection,17,0,

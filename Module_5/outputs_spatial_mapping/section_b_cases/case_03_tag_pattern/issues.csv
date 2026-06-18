@@ -1,0 +1,2 @@
+severity,flag_code,entity_key,message
+LOW,TAG_FORMAT_INVALID,ci-1Ji,Numeric text but no valid extracted tag.

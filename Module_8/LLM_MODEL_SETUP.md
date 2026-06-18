@@ -6,8 +6,10 @@ Use together with:
 
 - `NEO4J_SETUP.md` — Neo4j database
 - `Module_8_Building_Knowledge_Graphs_with_LLMs.ipynb` — build graphs from text with LLMs
+- `Module_8_Practical_Knowledge_Graph_Applications.ipynb` — real-world KG applications (Part 8: LLM + Cypher Q&A)
 - `Module_8_Using_Knowledge_Graph_with_LangChain.ipynb` — LangChain + Neo4j integration
-- `Module_8_Using_Knowledge_Graph_with_LlamaIndex.ipynb` — LlamaIndex + Neo4j integration (via `langchain-neo4j` bridge)
+- `Module_8_Using_Knowledge_Graph_with_LlamaIndex.ipynb` — LlamaIndex + Neo4j (`Neo4jPropertyGraphStore`, `Neo4jVectorStore`)
+- `Module_8_Warehouse_Inventory_Management_with_Knowledge_Graphs.ipynb` — warehouse/inventory KG (Part 10: LLM + Cypher Q&A)
 
 ---
 
@@ -209,4 +211,6 @@ Read the raised `RuntimeError` — it includes stderr from the subprocess. Commo
 When setup is complete, continue in your Module 8 notebook from **Step 0**:
 
 - `Module_8_Building_Knowledge_Graphs_with_LLMs.ipynb`
+- `Module_8_Practical_Knowledge_Graph_Applications.ipynb` (Part 8)
 - `Module_8_Using_Knowledge_Graph_with_LangChain.ipynb`
+- `Module_8_Warehouse_Inventory_Management_with_Knowledge_Graphs.ipynb` (Part 10)

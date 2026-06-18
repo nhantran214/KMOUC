@@ -5,8 +5,10 @@ This guide helps you install and configure **Neo4j** and related tools on your m
 | Notebook | Topic |
 |----------|--------|
 | `Module_8_Building_Knowledge_Graphs_with_LLMs.ipynb` | Build knowledge graphs with LLMs |
+| `Module_8_Practical_Knowledge_Graph_Applications.ipynb` | Real-world KG applications (logistics, compliance, analytics) |
 | `Module_8_Using_Knowledge_Graph_with_LangChain.ipynb` | Neo4j + LangChain (RAG, GraphRAG, text-to-Cypher, agents) |
 | `Module_8_Using_Knowledge_Graph_with_LlamaIndex.ipynb` | Neo4j + LlamaIndex (RAG, GraphRAG, text-to-Cypher, agents) |
+| `Module_8_Warehouse_Inventory_Management_with_Knowledge_Graphs.ipynb` | Warehouse & inventory KG from logistics CSV |
 
 These notebooks **do not** repeat full installation steps. Complete this document first, then open the notebook you are taking.
 
@@ -310,7 +312,11 @@ Start Jupyter:
 ```bash
 jupyter notebook Module_8_Building_Knowledge_Graphs_with_LLMs.ipynb
 # or
+jupyter notebook Module_8_Practical_Knowledge_Graph_Applications.ipynb
+# or
 jupyter notebook Module_8_Using_Knowledge_Graph_with_LangChain.ipynb
+# or
+jupyter notebook Module_8_Warehouse_Inventory_Management_with_Knowledge_Graphs.ipynb
 ```
 
 ---
@@ -511,4 +517,5 @@ If APOC download fails in logs, temporarily start **without** `NEO4J_PLUGINS` to
 When setup is complete, open your course notebook and start from **Step 0**:
 
 - `Module_8_Building_Knowledge_Graphs_with_LLMs.ipynb`
+- `Module_8_Practical_Knowledge_Graph_Applications.ipynb`
 - `Module_8_Using_Knowledge_Graph_with_LangChain.ipynb`

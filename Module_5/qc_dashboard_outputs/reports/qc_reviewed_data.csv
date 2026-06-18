@@ -1,0 +1,6 @@
+item_id,component_type,pressure_bar,temperature_c,confidence,drawing_no,review_status,review_comment
+V-101,Valve,8.5,65,0.94,DWG-001,auto_pass,
+P-202,Pump,-1.2,40,0.88,DWG-001,needs_review,
+T-303,Tank,2.3,420,0.91,DWG-002,needs_review,
+F-404,Filter,1.1,32,1.2,DWG-003,needs_review,
+M-505,Motor,0.5,22,0.77,,needs_review,

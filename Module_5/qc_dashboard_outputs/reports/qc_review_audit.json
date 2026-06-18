@@ -1,0 +1,59 @@
+{
+  "total_records": 5,
+  "status_counts": {
+    "needs_review": 4,
+    "auto_pass": 1
+  },
+  "records": [
+    {
+      "item_id": "V-101",
+      "component_type": "Valve",
+      "pressure_bar": 8.5,
+      "temperature_c": 65,
+      "confidence": 0.94,
+      "drawing_no": "DWG-001",
+      "review_status": "auto_pass",
+      "review_comment": ""
+    },
+    {
+      "item_id": "P-202",
+      "component_type": "Pump",
+      "pressure_bar": -1.2,
+      "temperature_c": 40,
+      "confidence": 0.88,
+      "drawing_no": "DWG-001",
+      "review_status": "needs_review",
+      "review_comment": ""
+    },
+    {
+      "item_id": "T-303",
+      "component_type": "Tank",
+      "pressure_bar": 2.3,
+      "temperature_c": 420,
+      "confidence": 0.91,
+      "drawing_no": "DWG-002",
+      "review_status": "needs_review",
+      "review_comment": ""
+    },
+    {
+      "item_id": "F-404",
+      "component_type": "Filter",
+      "pressure_bar": 1.1,
+      "temperature_c": 32,
+      "confidence": 1.2,
+      "drawing_no": "DWG-003",
+      "review_status": "needs_review",
+      "review_comment": ""
+    },
+    {
+      "item_id": "M-505",
+      "component_type": "Motor",
+      "pressure_bar": 0.5,
+      "temperature_c": 22,
+      "confidence": 0.77,
+      "drawing_no": "",
+      "review_status": "needs_review",
+      "review_comment": ""
+    }
+  ]
+}

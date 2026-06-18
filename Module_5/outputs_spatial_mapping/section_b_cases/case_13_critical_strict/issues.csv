@@ -1,0 +1,5 @@
+severity,flag_code,entity_key,message
+CRITICAL,CRITICAL_ASSET_RULE_VIOLATION,P-210A,Critical asset exceeds strict distance.
+CRITICAL,CRITICAL_ASSET_RULE_VIOLATION,P-210A,Critical asset type mismatch.
+CRITICAL,CRITICAL_ASSET_RULE_VIOLATION,C-101,Critical asset type mismatch.
+CRITICAL,CRITICAL_ASSET_RULE_VIOLATION,V-101,Critical asset type mismatch.

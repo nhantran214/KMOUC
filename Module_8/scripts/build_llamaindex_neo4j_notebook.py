@@ -31,7 +31,7 @@ cells.append(
         "",
         "**You will learn how to:**",
         "",
-        "- Use the **`langchain-neo4j`** package as the Neo4j bridge inside LlamaIndex applications.",
+        "- Use **`Neo4jPropertyGraphStore`** and **`Neo4jVectorStore`** to connect LlamaIndex to Neo4j.",
         "- Create **RAG** and **GraphRAG** retrievers.",
         "- Implement and customize a **text-to-Cypher** retriever.",
         "- Create a simple **LlamaIndex agent** that interacts with Neo4j.",
@@ -83,8 +83,8 @@ cells.append(
         "| Section | Topic |",
         "|---------|--------|",
         "| 0 | Development environment & connectivity |",
-        "| 3.1.1 | Neo4j integration (`langchain-neo4j`) |",
-        "| 3.1.2 | `Neo4jGraph` — schema and queries |",
+        "| 3.1.1 | Neo4j integration (`Neo4jPropertyGraphStore`) |",
+        "| 3.1.2 | Schema introspection and Cypher helpers |",
         "| 3.1.3 | Seed the LlamaIndex lab graph |",
         "| 3.1.4 | Simple LlamaIndex agent |",
         "",
@@ -92,7 +92,7 @@ cells.append(
         "",
         "| Section | Topic |",
         "|---------|--------|",
-        "| 3.2.1 | Vector search (`Neo4jVector`) |",
+        "| 3.2.1 | Vector search (`Neo4jVectorStore`) |",
         "| 3.2.2 | Vector retriever (RAG) |",
         "| 3.2.3 | Graph retrieval (GraphRAG) |",
         "| 3.2.4 | Additional data (optional) |",
@@ -102,8 +102,8 @@ cells.append(
         "| Section | Topic |",
         "|---------|--------|",
         "| 3.3.1 | Schema introspection |",
-        "| 3.3.2 | Cypher generation (`GraphCypherQAChain`) |",
-        "| 3.3.3 | Customize the chain |",
+        "| 3.3.2 | Cypher generation (`TextToCypherRetriever`) |",
+        "| 3.3.3 | Customize the retriever |",
         "| 3.3.4 | Text-to-Cypher as a retriever |",
     )
 )
@@ -143,18 +143,19 @@ cells.append(
     md(
         "### Step 0a — Install Python packages",
         "",
-        "We install the **Neo4j driver**, **LlamaIndex** core libraries and **LangChain** bridge packages, the official **`langchain-neo4j`**",
-        "integration, and **sentence-transformers** for local embeddings (Section 3.2).",
+        "We install the **Neo4j driver**, **LlamaIndex** graph/vector integrations, and **sentence-transformers**",
+        "for local embeddings (Section 3.2).",
         "",
         "| Package | Role |",
         "|---------|------|",
         "| `neo4j` | Official database driver (Bolt protocol) |",
-        "| `langchain-neo4j` | `Neo4jGraph`, `Neo4jVector`, `GraphCypherQAChain` (Neo4j bridge) |",
         "| `llama-index-core` | Indexes, retrievers, query engines, agents |",
-        "| `llama-index-llms-langchain` | Wrap LangChain LLMs as `Settings.llm` |",
-        "| `llama-index-embeddings-huggingface` | Local embeddings for LlamaIndex |",
+        "| `llama-index-graph-stores-neo4j` | `Neo4jPropertyGraphStore`, `TextToCypherRetriever` |",
+        "| `llama-index-vector-stores-neo4jvector` | `Neo4jVectorStore` for vector RAG |",
+        "| `llama-index-embeddings-huggingface` | Local `HuggingFaceEmbedding` |",
+        "| `llama-index-llms-openai` | OpenAI LLM (optional cloud path) |",
         "| `python-dotenv` | Load `Module_8/.env` without exporting variables manually |",
-        "| `sentence-transformers` | Embedding model for `Neo4jVector` |",
+        "| `sentence-transformers` | Backend for HuggingFace embeddings |",
         "",
         "**Note:** Run this cell once per virtual environment. If versions conflict, restart the kernel after install.",
     )
@@ -164,9 +165,9 @@ cells.append(
     code(
         "# Step 0a — Install dependencies (run once per environment)",
         "%pip install -q neo4j python-dotenv requests \\",
-        "    langchain langchain-community langchain-neo4j langchain-openai \\",
-        "    llama-index-core llama-index-llms-langchain llama-index-embeddings-huggingface \\",
-        "    sentence-transformers",
+        "    llama-index-core llama-index-graph-stores-neo4j \\",
+        "    llama-index-vector-stores-neo4jvector llama-index-embeddings-huggingface \\",
+        "    llama-index-llms-openai sentence-transformers",
     )
 )
 
@@ -244,14 +245,14 @@ cells.append(
         "",
         "This notebook uses an LLM in three ways:",
         "",
-        "1. **Text-to-Cypher** (`GraphCypherQAChain`) — needs strong instruction-following.",
-        "2. **RAG / GraphRAG answers** — chat-style prompts.",
+        "1. **Text-to-Cypher** (`TextToCypherRetriever`) — needs strong instruction-following.",
+        "2. **RAG / GraphRAG answers** — query engines and `Settings.llm`.",
         "3. **ReAct agent** — multi-step reasoning with tools.",
         "",
         "| `LLM_BACKEND` | How the notebook calls the model |",
         "|---------------|-----------------------------------|",
-        "| `ollama` (default) | Subprocess → `ollama_model_runner.py` → Ollama HTTP API |",
-        "| `openai` | `ChatOpenAI` with `OPENAI_API_KEY` |",
+        "| `ollama` (default) | Subprocess → `ollama_model_runner.py` → LlamaIndex `CustomLLM` |",
+        "| `openai` | `llama_index.llms.openai.OpenAI` with `OPENAI_API_KEY` |",
         "",
         "The **Ollama + runner** path matches other KMOU modules: the Jupyter kernel stays light,",
         "and long prompts run in a separate process (see **`LLM_MODEL_SETUP.md`**).",
@@ -283,7 +284,7 @@ cells.append(
         "### Step 0c — Verify Neo4j connectivity",
         "",
         "We open a short-lived **Bolt** session using the official `neo4j` driver.",
-        "This is the same protocol the `langchain-neo4j` `Neo4jGraph` uses under the hood.",
+        "This is the same Bolt protocol used by `Neo4jPropertyGraphStore` and `Neo4jVectorStore`.",
         "",
         "**If this cell fails:**",
         "",
@@ -326,12 +327,11 @@ cells.append(
     md(
         "### Step 0d — Ollama runner helpers",
         "",
-        "LlamaIndex `Settings.llm` can wrap LangChain models (`LLM`, `BaseChatModel`). Our course runner is a **CLI script**",
+        "LlamaIndex expects an **`LLM`** object on `Settings.llm`. Our course runner is a **CLI script**",
         "that returns JSON on stdout. We bridge the gap with:",
         "",
         "1. **`call_ollama_runner()`** — writes prompt to temp file, runs subprocess, parses JSON.",
-        "2. **`OllamaRunnerLLM`** — used by `GraphCypherQAChain` and wrapped as **`Settings.llm`**.",
-        "3. **`LangChainLLM`** — LlamaIndex adapter so query engines and agents share one LLM.",
+        "2. **`OllamaRunnerLLM`** — a LlamaIndex **`CustomLLM`** used by query engines, retrievers, and agents.",
         "",
         "This mirrors **`Module_8_Building_Knowledge_Graphs_with_LLMs.ipynb`** and **`LLM_MODEL_SETUP.md`**.",
     )
@@ -352,10 +352,7 @@ cells.append(
         "import subprocess",
         "import sys",
         "import tempfile",
-        "from typing import Any, List, Optional",
-        "",
-        "from langchain_core.callbacks import CallbackManagerForLLMRun",
-        "from langchain_core.language_models.llms import LLM",
+        "from typing import Any, Optional",
         "",
         "",
         "def _resolve_ollama_runner_path() -> Path:",
@@ -424,39 +421,45 @@ cells.append(
 
 cells.append(
     md(
-        "#### Step 0d.3 — LangChain LLM adapter + LlamaIndex `Settings`",
+        "#### Step 0d.3 — LlamaIndex `CustomLLM` adapter",
         "",
-        "- **`OllamaRunnerLLM`** implements `_call(prompt) → str` for `GraphCypherQAChain`.",
-        "- **`LangChainLLM`** exposes that model to LlamaIndex query engines and agents.",
+        "- **`OllamaRunnerLLM`** subclasses **`CustomLLM`** and implements `complete(prompt)`.",
+        "- All later sections use **`Settings.llm`** (query engines, `TextToCypherRetriever`, `ReActAgent`).",
     )
 )
 
 cells.append(
     code(
-        "# Step 0d.3 — LangChain LLM adapter for langchain-neo4j + LlamaIndex Settings",
-        "class OllamaRunnerLLM(LLM):",
+        "# Step 0d.3 — LlamaIndex CustomLLM for the Ollama runner",
+        "from llama_index.core.llms import CustomLLM, CompletionResponse, LLMMetadata",
+        "",
+        "",
+        "class OllamaRunnerLLM(CustomLLM):",
         "    model: str = OLLAMA_MODEL",
         "",
         "    @property",
-        "    def _llm_type(self) -> str:",
-        "        return 'ollama_runner'",
+        "    def metadata(self) -> LLMMetadata:",
+        "        return LLMMetadata(",
+        "            context_window=8192,",
+        "            num_output=OLLAMA_MAX_TOKENS,",
+        "            model_name=self.model,",
+        "            is_chat_model=False,",
+        "        )",
         "",
-        "    def _call(self, prompt: str, stop: Optional[List[str]] = None,",
-        "              run_manager: Optional[CallbackManagerForLLMRun] = None, **kwargs: Any) -> str:",
-        "        return call_ollama_runner(prompt, model=self.model)",
+        "    def complete(self, prompt: str, formatted: bool = False, **kwargs: Any) -> CompletionResponse:",
+        "        return CompletionResponse(text=call_ollama_runner(prompt, model=self.model))",
     )
 )
 
 cells.append(
     md(
-        "### Step 0d.4 — `llm` (LangChain) and `Settings.llm` (LlamaIndex)",
+        "### Step 0d.4 — Configure `Settings.llm`",
         "",
-        "| Variable | Used in |",
-        "|----------|---------|",
-        "| `llm` | `GraphCypherQAChain` (langchain-neo4j) |",
-        "| `Settings.llm` | LlamaIndex query engines and `ReActAgent` |",
+        "`Settings.llm` is the global default for:",
         "",
-        "We wrap the same underlying model with **`LangChainLLM`** so both frameworks share one backend.",
+        "- `TextToCypherRetriever`",
+        "- `VectorStoreIndex.as_query_engine()`",
+        "- `ReActAgent`",
     )
 )
 
@@ -464,22 +467,20 @@ cells.append(
     code(
         "# Step 0d.4 — Select backend and configure LlamaIndex Settings",
         "from llama_index.core import Settings",
-        "from llama_index.llms.langchain import LangChainLLM",
         "",
         "if LLM_BACKEND == 'openai':",
         "    if not os.getenv('OPENAI_API_KEY'):",
         "        raise ValueError('OPENAI_API_KEY required when LLM_BACKEND=openai')",
-        "    from langchain_openai import ChatOpenAI",
-        "    llm = ChatOpenAI(model=OPENAI_MODEL, temperature=0)",
+        "    from llama_index.llms.openai import OpenAI",
+        "    Settings.llm = OpenAI(model=OPENAI_MODEL, temperature=0)",
         "    print(f'Using OpenAI: {OPENAI_MODEL}')",
         "elif LLM_BACKEND == 'ollama':",
-        "    llm = OllamaRunnerLLM()",
+        "    Settings.llm = OllamaRunnerLLM()",
         "    print(f'Using Ollama runner: {OLLAMA_MODEL} @ {OLLAMA_HOST}')",
         "    print('Ensure Ollama is running: ollama serve')",
         "else:",
         "    raise ValueError(\"Set LLM_BACKEND to 'ollama' or 'openai'\")",
         "",
-        "Settings.llm = LangChainLLM(llm=llm)",
         "print('Settings.llm:', type(Settings.llm).__name__)",
     )
 )
@@ -534,84 +535,92 @@ cells.append(
         "```text",
         "Your app (LlamaIndex)",
         "    │",
-        "    ├── Neo4jGraph      → Cypher, schema, seed data",
-        "    ├── Neo4jVector     → embeddings + similarity search",
-        "    ├── GraphCypherQAChain → natural language → Cypher → answer (langchain-neo4j)",
-        "    └── ReActAgent + FunctionTools → LlamaIndex agent over the graph",
+        "    ├── Neo4jPropertyGraphStore → schema, text-to-Cypher, graph queries",
+        "    ├── Neo4jVectorStore        → embeddings + similarity search",
+        "    ├── TextToCypherRetriever   → natural language → Cypher → context",
+        "    └── ReActAgent + FunctionTools → agent over the graph",
         "            │",
         "            ▼",
         "      Neo4j Database (Bolt)",
         "```",
         "",
-        "The official package is **`langchain-neo4j`** (`import langchain_neo4j`).",
-        "Older tutorials may import from `langchain_community` — prefer `langchain_neo4j` for new projects.",
+        "LlamaIndex Neo4j integrations live in **`llama-index-graph-stores-neo4j`** and",
+        "**`llama-index-vector-stores-neo4jvector`** (see [Neo4j Labs — LlamaIndex](https://neo4j.com/labs/genai-ecosystem/llamaindex/)).",
     )
 )
 
 cells.append(
     md(
-        "## 3.1.1 Neo4j integration — `Neo4jGraph`",
+        "## 3.1.1 Neo4j integration — `Neo4jPropertyGraphStore`",
         "",
-        "`Neo4jGraph` wraps the Neo4j Python driver with LangChain conventions (used as the Neo4j bridge):",
+        "`Neo4jPropertyGraphStore` is LlamaIndex's property-graph adapter for Neo4j:",
         "",
-        "- **`query(cypher, params)`** — run Cypher and get Python dict rows.",
-        "- **`schema`** — text description of labels, relationships, properties (after `refresh_schema()`).",
-        "- Shared **URL / credentials** with vector and QA components.",
+        "- **`get_schema_str()`** — text schema for `TextToCypherRetriever`.",
+        "- **`structured_query(cypher, params)`** — run Cypher when supported.",
+        "- Works with **`PropertyGraphIndex`**, retrievers, and query engines.",
         "",
-        "In production you often use one graph object per request or a connection pool;",
-        "for teaching we use a single global `neo4j_graph` in the notebook.",
+        "For lab seeding we also keep a thin **`run_cypher()`** helper on the official `neo4j` driver",
+        "(same Bolt connection, explicit `CREATE` / `MERGE` in teaching cells).",
     )
 )
 
 cells.append(
     code(
-        "# 3.1.1 — Create Neo4jGraph",
-        "from langchain_neo4j import Neo4jGraph",
+        "# 3.1.1 — Neo4jPropertyGraphStore + run_cypher helper",
+        "from neo4j import GraphDatabase",
+        "from llama_index.graph_stores.neo4j import Neo4jPropertyGraphStore",
         "",
-        "neo4j_graph = Neo4jGraph(",
-        "    url=NEO4J_URI,",
+        "driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USERNAME, NEO4J_PASSWORD))",
+        "",
+        "",
+        "def run_cypher(query: str, params: dict | None = None) -> list[dict]:",
+        "    with driver.session(database=NEO4J_DATABASE) as session:",
+        "        return [dict(row) for row in session.run(query, params or {})]",
+        "",
+        "",
+        "graph_store = Neo4jPropertyGraphStore(",
         "    username=NEO4J_USERNAME,",
         "    password=NEO4J_PASSWORD,",
+        "    url=NEO4J_URI,",
         "    database=NEO4J_DATABASE,",
         ")",
-        "print('Neo4jGraph connected.')",
+        "print('Neo4jPropertyGraphStore connected.')",
     )
 )
 
 cells.append(
     md(
-        "**Expected output:** `Neo4jGraph connected.`",
+        "**Expected output:** `Neo4jPropertyGraphStore connected.`",
         "",
-        "No data is created yet — we only open a bridge connection via `langchain-neo4j`.",
+        "No lab data is created yet — we only open the graph store and driver.",
     )
 )
 
 cells.append(
     md(
-        "### 3.1.1b — First query through the Neo4j bridge",
+        "### 3.1.1b — First query through `run_cypher()`",
         "",
         "Same as `RETURN` in Browser, but results arrive as a **list of dictionaries** in Python.",
-        "Downstream chains consume this format when executing generated Cypher.",
+        "Agent tools and seeding cells use this helper throughout the lab.",
     )
 )
 
 cells.append(
     code(
-        "# 3.1.1b — Query through the Neo4j bridge wrapper",
-        "rows = neo4j_graph.query('RETURN \"LlamaIndex + Neo4j OK\" AS message')",
+        "# 3.1.1b — Query through run_cypher()",
+        "rows = run_cypher('RETURN \"LlamaIndex + Neo4j OK\" AS message')",
         "print(rows)",
     )
 )
 
 cells.append(
     md(
-        "## 3.1.2 Schema introspection with `refresh_schema()`",
+        "## 3.1.2 Schema introspection with `get_schema_str()`",
         "",
         "Text-to-Cypher (Section 3.3) sends **schema text** to the LLM so it knows which labels exist.",
         "",
-        "- **`refresh_schema()`** queries the database catalog and builds a summary string.",
-        "- The result is stored in **`neo4j_graph.schema`**.",
-        "- After you **seed** or **change** data, call `refresh_schema()` again.",
+        "- **`graph_store.get_schema_str()`** introspects labels, relationships, and properties.",
+        "- After you **seed** or **change** data, call it again before text-to-Cypher demos.",
         "",
         "Better schema in Neo4j (consistent labels, documented properties) → better generated Cypher.",
     )
@@ -619,11 +628,11 @@ cells.append(
 
 cells.append(
     code(
-        "# 3.1.2 — Refresh and preview schema (truncated)",
-        "neo4j_graph.refresh_schema()",
-        "schema_preview = (neo4j_graph.schema or '')[:1200]",
+        "# 3.1.2 — Preview graph schema (truncated)",
+        "schema_str = graph_store.get_schema_str()",
+        "schema_preview = (schema_str or '')[:1200]",
         "print(schema_preview)",
-        "if len(neo4j_graph.schema or '') > 1200:",
+        "if len(schema_str or '') > 1200:",
         "    print('... [truncated for display]')",
     )
 )
@@ -670,7 +679,7 @@ cells.append(
 cells.append(
     code(
         "# 3.1.3a — Clear previous lab data (safe to re-run)",
-        "neo4j_graph.query(",
+        "run_cypher(",
         "    '''",
         "    MATCH (n:LlamaIndexLab)",
         "    DETACH DELETE n",
@@ -692,7 +701,7 @@ cells.append(
 cells.append(
     code(
         "# 3.1.3b — Seed structured maritime entities",
-        "neo4j_graph.query(",
+        "run_cypher(",
         "    '''",
         "    CREATE (lab:LlamaIndexLab {course: 'Using Knowledge Graph with LlamaIndex', module: 'Module_8'})",
         "    CREATE (p1:Port:LlamaIndexLab {id: 'Port_of_Rotterdam', name: 'Port of Rotterdam', country: 'Netherlands'})",
@@ -760,7 +769,7 @@ cells.append(
         "    },",
         "]",
         "for ch in chunks:",
-        "    neo4j_graph.query(",
+        "    run_cypher(",
         "        '''",
         "        MERGE (d:Document:LlamaIndexLab {id: $doc_id})",
         "        SET d.title = 'LlamaIndex lab corpus'",
@@ -793,7 +802,7 @@ cells.append(
         "    ('chunk_singapore', 'Port_of_Singapore'),",
         "]",
         "for chunk_id, entity_id in links:",
-        "    neo4j_graph.query(",
+        "    run_cypher(",
         "        '''",
         "        MATCH (c:Chunk:LlamaIndexLab {id: $chunk_id})",
         "        MATCH (e:LlamaIndexLab {id: $entity_id})",
@@ -801,14 +810,13 @@ cells.append(
         "        ''',",
         "        params={'chunk_id': chunk_id, 'entity_id': entity_id},",
         "    )",
-        "neo4j_graph.refresh_schema()",
-        "print('Chunk–entity links created; schema refreshed.')",
+        "print('Chunk–entity links created.')",
     )
 )
 
 cells.append(
     md(
-        "**Checkpoint:** You should now see `Port`, `Chunk`, `MENTIONS`, etc. in `neo4j_graph.schema`.",
+        "**Checkpoint:** Re-run **3.1.2** — you should now see `Port`, `Chunk`, `MENTIONS`, etc. in `get_schema_str()`.",
     )
 )
 
@@ -823,9 +831,9 @@ cells.append(
         "| Tool | When to use |",
         "|------|-------------|",
         "| `run_read_cypher` | User gives Cypher or wants raw rows |",
-        "| `ask_graph_in_natural_language` | Open-ended question → `GraphCypherQAChain` (Section 3.3) |",
+        "| `ask_graph_in_natural_language` | Open-ended question → `TextToCypherRetriever` (Section 3.3) |",
         "",
-        "> **Order note:** The natural-language tool needs `CYPHER_QA_CHAIN` from Section 3.3.",
+        "> **Order note:** The natural-language tool needs `CYPHER_QUERY_ENGINE` from Section 3.3.",
         "> You can define the agent here, but run the demo cell **after** 3.3.",
         "",
         "> **Production:** Use read-only DB roles, query allow-lists, and human review for generated Cypher.",
@@ -846,7 +854,7 @@ cells.append(
         "# 3.1.4a — Define tools (Cypher QA chain wired in 3.3; placeholder first)",
         "from llama_index.core.tools import FunctionTool",
         "",
-        "CYPHER_QA_CHAIN = None  # set in Section 3.3",
+        "CYPHER_QUERY_ENGINE = None  # set in Section 3.3",
         "",
         "",
         "def run_read_cypher_fn(cypher: str) -> str:",
@@ -854,16 +862,15 @@ cells.append(
         "    if any(word in cypher.lower() for word in forbidden):",
         "        return 'Error: only read-only queries (MATCH/RETURN) are allowed in this lab tool.'",
         "    try:",
-        "        return str(neo4j_graph.query(cypher))",
+        "        return str(run_cypher(cypher))",
         "    except Exception as exc:",
         "        return f'Cypher error: {exc}'",
         "",
         "",
         "def ask_graph_in_natural_language_fn(question: str) -> str:",
-        "    if CYPHER_QA_CHAIN is None:",
-        "        return 'GraphCypherQAChain not initialized yet — run Section 3.3 first, then re-run agent cells.'",
-        "    out = CYPHER_QA_CHAIN.invoke({'query': question})",
-        "    return out.get('result', str(out))",
+        "    if CYPHER_QUERY_ENGINE is None:",
+        "        return 'Cypher query engine not initialized yet — run Section 3.3 first, then re-run agent cells.'",
+        "    return str(CYPHER_QUERY_ENGINE.query(question))",
         "",
         "",
         "run_read_cypher = FunctionTool.from_defaults(",
@@ -874,7 +881,7 @@ cells.append(
         "ask_graph_in_natural_language = FunctionTool.from_defaults(",
         "    fn=ask_graph_in_natural_language_fn,",
         "    name='ask_graph_in_natural_language',",
-        "    description='Answer open questions with GraphCypherQAChain (text-to-Cypher).',",
+        "    description='Answer open questions with TextToCypherRetriever (text-to-Cypher).',",
         ")",
         "agent_tools = [run_read_cypher, ask_graph_in_natural_language]",
         "print('Tools:', [t.metadata.name for t in agent_tools])",
@@ -917,18 +924,18 @@ cells.append(
     md(
         "### 3.1.4c — Try the agent (preview)",
         "",
-        "This cell **skips** until `CYPHER_QA_CHAIN` exists. After Section 3.3, re-run **3.3.4b** for a full demo.",
+        "This cell **skips** until `CYPHER_QUERY_ENGINE` exists. After Section 3.3, re-run **3.3.4b** for a full demo.",
     )
 )
 
 cells.append(
     code(
         "# 3.1.4c — Example agent question (preview)",
-        "if CYPHER_QA_CHAIN is not None:",
+        "if CYPHER_QUERY_ENGINE is not None:",
         "    response = agent.query('Which organization operates in the Port of Rotterdam?')",
         "    print(response)",
         "else:",
-        "    print('Skip until CYPHER_QA_CHAIN is defined in Section 3.3 (then run cell 3.3.4b).')",
+        "    print('Skip until CYPHER_QUERY_ENGINE is defined in Section 3.3 (then run cell 3.3.4b).')",
     )
 )
 
@@ -949,7 +956,7 @@ cells.append(
         "- **Graph traversal** — find related *entities* and *facts* by relationships.",
         "",
         "Neo4j 5.x can store embeddings on nodes and query them with a **vector index**.",
-        "`Neo4jVector` in `langchain-neo4j` creates the index and exposes LangChain retriever APIs (wrapped for LlamaIndex).",
+        "**`Neo4jVectorStore`** (LlamaIndex) creates the index and powers **`VectorStoreIndex`** retrievers.",
         "",
         "```text",
         "User question",
@@ -963,7 +970,7 @@ cells.append(
 
 cells.append(
     md(
-        "## 3.2.1 Vector search with `Neo4jVector`",
+        "## 3.2.1 Vector search with `Neo4jVectorStore`",
         "",
         "### Embedding model",
         "",
@@ -978,11 +985,15 @@ cells.append(
 
 cells.append(
     code(
-        "# 3.2.1a — Embedding model",
-        "from langchain_community.embeddings import HuggingFaceEmbeddings",
+        "# 3.2.1a — Embedding model (LlamaIndex Settings)",
+        "from llama_index.core import Settings",
+        "from llama_index.embeddings.huggingface import HuggingFaceEmbedding",
         "",
-        "embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')",
-        "sample_vec = embeddings.embed_query('maritime port')",
+        "EMBED_DIM = 384",
+        "Settings.embed_model = HuggingFaceEmbedding(",
+        "    model_name='sentence-transformers/all-MiniLM-L6-v2'",
+        ")",
+        "sample_vec = Settings.embed_model.get_text_embedding('maritime port')",
         "print('Embedding dimension:', len(sample_vec))",
     )
 )
@@ -997,9 +1008,9 @@ cells.append(
 
 cells.append(
     md(
-        "### 3.2.1b — Load chunks as LangChain `Document` (for `Neo4jVector` indexing) objects",
+        "### 3.2.1b — Load chunks as LlamaIndex `TextNode` objects",
         "",
-        "We read `Chunk` nodes from Neo4j and map them to `Document(page_content=..., metadata=...)`.",
+        "We read `Chunk` nodes from Neo4j and map them to **`TextNode(text=..., metadata=...)`**.",
         "Metadata `chunk_id` is required later for GraphRAG expansion.",
     )
 )
@@ -1007,66 +1018,58 @@ cells.append(
 cells.append(
     code(
         "# 3.2.1b — Load chunk texts from Neo4j",
-        "from langchain_core.documents import Document",
+        "from llama_index.core.schema import TextNode",
         "",
-        "chunk_rows = neo4j_graph.query(",
+        "chunk_rows = run_cypher(",
         "    '''",
         "    MATCH (c:Chunk:LlamaIndexLab)",
         "    RETURN c.id AS id, c.text AS text, c.source AS source",
         "    ORDER BY c.id",
         "    '''",
         ")",
-        "documents = [",
-        "    Document(page_content=row['text'], metadata={'chunk_id': row['id'], 'source': row.get('source')})",
+        "chunk_nodes = [",
+        "    TextNode(text=row['text'], metadata={'chunk_id': row['id'], 'source': row.get('source')})",
         "    for row in chunk_rows",
         "]",
-        "print('Documents for indexing:', len(documents))",
-        "for d in documents[:2]:",
-        "    print('-', d.metadata['chunk_id'], ':', d.page_content[:60], '...')",
+        "print('TextNodes for indexing:', len(chunk_nodes))",
+        "for n in chunk_nodes[:2]:",
+        "    print('-', n.metadata['chunk_id'], ':', n.text[:60], '...')",
     )
 )
 
 cells.append(
     md(
-        "### 3.2.1c — Create vector index with `Neo4jVector.from_documents`",
+        "### 3.2.1c — Create `VectorStoreIndex` with `Neo4jVectorStore`",
         "",
-        "| Parameter | This lab |",
+        "| Component | This lab |",
         "|-----------|----------|",
-        "| `index_name` | `llamaindex_lab_chunk_index` |",
-        "| `node_label` | `Chunk` |",
-        "| `text_node_property` | `text` |",
-        "| `embedding_node_property` | `embedding` |",
+        "| Vector store | `Neo4jVectorStore` |",
+        "| Index | `VectorStoreIndex` |",
+        "| Embedding dim | `384` (MiniLM-L6-v2) |",
         "",
-        "The helper **embeds** each document, **writes** vectors to matching nodes, and **creates** the index if missing.",
-        "We clear old `embedding` properties first so re-runs stay idempotent.",
+        "`VectorStoreIndex` **embeds** each `TextNode` and persists vectors through `Neo4jVectorStore`.",
+        "Re-running this cell may add duplicate vector entries — use a fresh lab DB or drop the vector index if needed.",
     )
 )
 
 cells.append(
     code(
-        "# 3.2.1c — Create Neo4j vector index from documents",
-        "from langchain_neo4j import Neo4jVector",
+        "# 3.2.1c — Build VectorStoreIndex backed by Neo4j",
+        "from llama_index.vector_stores.neo4jvector import Neo4jVectorStore",
+        "from llama_index.core import StorageContext, VectorStoreIndex",
         "",
-        "VECTOR_INDEX_NAME = 'llamaindex_lab_chunk_index'",
-        "VECTOR_NODE_LABEL = 'Chunk'",
-        "VECTOR_TEXT_PROPERTY = 'text'",
-        "VECTOR_EMBEDDING_PROPERTY = 'embedding'",
-        "",
-        "neo4j_graph.query('MATCH (c:Chunk:LlamaIndexLab) REMOVE c.embedding')",
-        "",
-        "vector_store = Neo4jVector.from_documents(",
-        "    documents,",
-        "    embeddings,",
-        "    url=NEO4J_URI,",
-        "    username=NEO4J_USERNAME,",
-        "    password=NEO4J_PASSWORD,",
-        "    database=NEO4J_DATABASE,",
-        "    index_name=VECTOR_INDEX_NAME,",
-        "    node_label=VECTOR_NODE_LABEL,",
-        "    text_node_property=VECTOR_TEXT_PROPERTY,",
-        "    embedding_node_property=VECTOR_EMBEDDING_PROPERTY,",
+        "neo4j_vector = Neo4jVectorStore(",
+        "    NEO4J_USERNAME,",
+        "    NEO4J_PASSWORD,",
+        "    NEO4J_URI,",
+        "    EMBED_DIM,",
         ")",
-        "print('Neo4jVector index ready:', VECTOR_INDEX_NAME)",
+        "storage_context = StorageContext.from_defaults(vector_store=neo4j_vector)",
+        "vector_index = VectorStoreIndex(",
+        "    chunk_nodes,",
+        "    storage_context=storage_context,",
+        ")",
+        "print('VectorStoreIndex ready (Neo4jVectorStore).')",
     )
 )
 
@@ -1074,7 +1077,7 @@ cells.append(
     md(
         "### 3.2.1d — Similarity search",
         "",
-        "`similarity_search(query, k=2)` embeds the query string and returns the top-k nearest chunks.",
+        "`as_retriever(similarity_top_k=2).retrieve(query)` embeds the query and returns top-k `NodeWithScore` items.",
         "Compare results to the Rotterdam / Europe question — the Rotterdam chunk should rank high.",
     )
 )
@@ -1083,10 +1086,10 @@ cells.append(
     code(
         "# 3.2.1d — Similarity search",
         "query = 'Which port is the largest in Europe?'",
-        "hits = vector_store.similarity_search(query, k=2)",
+        "hits = vector_index.as_retriever(similarity_top_k=2).retrieve(query)",
         "print('Query:', query)",
-        "for i, doc in enumerate(hits, 1):",
-        "    print(f'{i}. {doc.metadata} -> {doc.page_content[:80]}...')",
+        "for i, hit in enumerate(hits, 1):",
+        "    print(f'{i}. {hit.metadata} -> {hit.text[:80]}...')",
     )
 )
 
@@ -1101,7 +1104,7 @@ cells.append(
         "",
         "### Minimal RAG pipeline",
         "",
-        "1. **Retrieve** chunk nodes similar to the user question (via LangChain `Neo4jVector`).",
+        "1. **Retrieve** chunk nodes similar to the user question (`VectorStoreIndex` retriever).",
         "2. **Synthesize** an answer with `Settings.llm` grounded in retrieved nodes.",
     )
 )
@@ -1110,7 +1113,7 @@ cells.append(
     md(
         "### 3.2.2a — `as_retriever()`",
         "",
-        "`search_kwargs={'k': 3}` returns three chunks per query. Increase `k` for broader context",
+        "`similarity_top_k=3` returns three chunks per query. Increase `k` for broader context",
         "(more tokens, higher cost/latency).",
     )
 )
@@ -1118,56 +1121,27 @@ cells.append(
 cells.append(
     code(
         "# 3.2.2a — Create vector retriever",
-        "vector_retriever = vector_store.as_retriever(search_kwargs={'k': 3})",
-        "retrieved = vector_retriever.invoke('Panama Canal shipping route')",
+        "vector_retriever = vector_index.as_retriever(similarity_top_k=3)",
+        "retrieved = vector_retriever.retrieve('Panama Canal shipping route')",
         "print('Retrieved', len(retrieved), 'chunks')",
-        "for doc in retrieved:",
-        "    print('-', doc.page_content[:70])",
+        "for hit in retrieved:",
+        "    print('-', hit.text[:70])",
     )
 )
 
 cells.append(
     md(
-        "### 3.2.2b — LlamaIndex `RetrieverQueryEngine`",
+        "### 3.2.2b — RAG with `as_query_engine()`",
         "",
-        "We wrap the LangChain vector retriever in a small **`BaseRetriever`** adapter,",
-        "then build a **`RetrieverQueryEngine`** that uses `Settings.llm` for synthesis.",
-        "",
-        "This pattern keeps **vectors in Neo4j** (`langchain-neo4j`) while the **orchestration** is LlamaIndex.",
+        "`VectorStoreIndex.as_query_engine()` combines retrieval + synthesis using **`Settings.llm`**.",
+        "This is the idiomatic LlamaIndex RAG pattern over **`Neo4jVectorStore`**.",
     )
 )
 
 cells.append(
     code(
-        "# 3.2.2b — RAG with RetrieverQueryEngine",
-        "from llama_index.core.retrievers import BaseRetriever",
-        "from llama_index.core.schema import NodeWithScore, QueryBundle, TextNode",
-        "from llama_index.core.query_engine import RetrieverQueryEngine",
-        "",
-        "",
-        "class LangchainVectorRetriever(BaseRetriever):",
-        "    \"\"\"Wrap LangChain Neo4jVector retriever as a LlamaIndex retriever.\"\"\"",
-        "",
-        "    def __init__(self, lc_retriever):",
-        "        self._lc = lc_retriever",
-        "        super().__init__()",
-        "",
-        "    def _retrieve(self, query_bundle: QueryBundle) -> list[NodeWithScore]:",
-        "        docs = self._lc.invoke(query_bundle.query_str)",
-        "        return [",
-        "            NodeWithScore(",
-        "                node=TextNode(text=d.page_content, metadata=dict(d.metadata or {})),",
-        "                score=1.0,",
-        "            )",
-        "            for d in docs",
-        "        ]",
-        "",
-        "",
-        "li_vector_retriever = LangchainVectorRetriever(vector_retriever)",
-        "rag_engine = RetrieverQueryEngine.from_args(",
-        "    li_vector_retriever,",
-        "    llm=Settings.llm,",
-        ")",
+        "# 3.2.2b — RAG query engine",
+        "rag_engine = vector_index.as_query_engine(similarity_top_k=3)",
         "rag_response = rag_engine.query('What does Maersk use for routes?')",
         "print(rag_response)",
     )
@@ -1191,7 +1165,7 @@ cells.append(
         "### GraphRAG pattern (this lab)",
         "",
         "1. Vector-retrieve top-k `Chunk` nodes.",
-        "2. Read `chunk_id` metadata from each `Document`.",
+        "2. Read `chunk_id` metadata from each retrieved node.",
         "3. Run Cypher: `Chunk -[:MENTIONS]-> Entity` and one hop of entity relationships.",
         "4. Pass **chunk text + graph facts** to the LLM.",
     )
@@ -1210,7 +1184,7 @@ cells.append(
     code(
         "# 3.2.3a — Graph expansion from retrieved chunk IDs",
         "def graph_context_for_chunks(chunk_ids: list[str]) -> str:",
-        "    rows = neo4j_graph.query(",
+        "    rows = run_cypher(",
         "        '''",
         "        UNWIND $ids AS chunk_id",
         "        MATCH (c:Chunk:LlamaIndexLab {id: chunk_id})-[:MENTIONS]->(e:LlamaIndexLab)",
@@ -1218,8 +1192,8 @@ cells.append(
         "        WHERE type(r) IN ['LOCATED_IN', 'OPERATES_IN', 'USES_ROUTE']",
         "        RETURN DISTINCT c.id AS chunk, e.id AS entity, type(r) AS rel, n.id AS related",
         "        LIMIT 30",
-        "        '''",
-        "        , params={'ids': chunk_ids},",
+        "        ''',",
+        "        {'ids': chunk_ids},",
         "    )",
         "    lines = []",
         "    for row in rows:",
@@ -1231,10 +1205,10 @@ cells.append(
         "",
         "",
         "def graphrag_retrieve(question: str, k: int = 2) -> dict:",
-        "    docs = vector_retriever.invoke(question)[:k]",
-        "    chunk_ids = [d.metadata.get('chunk_id') for d in docs if d.metadata.get('chunk_id')]",
+        "    hits = vector_retriever.retrieve(question)[:k]",
+        "    chunk_ids = [h.metadata.get('chunk_id') for h in hits if h.metadata.get('chunk_id')]",
         "    return {",
-        "        'chunks': docs,",
+        "        'chunks': hits,",
         "        'graph_context': graph_context_for_chunks(chunk_ids),",
         "    }",
         "",
@@ -1254,13 +1228,13 @@ cells.append(
 cells.append(
     code(
         "# 3.2.3b — GraphRAG answer",
-        "def format_lc_docs(docs):",
-        "    return '\\n\\n'.join(f'- {d.page_content}' for d in docs)",
+        "def format_nodes(hits):",
+        "    return '\\n\\n'.join(f'- {h.text}' for h in hits)",
         "",
         "",
         "def run_graphrag(question: str) -> str:",
         "    pack = graphrag_retrieve(question)",
-        "    chunks_txt = format_lc_docs(pack['chunks'])",
+        "    chunks_txt = format_nodes(pack['chunks'])",
         "    prompt = (",
         "        'Answer using chunk text and graph facts. Cite relationships when relevant.\\n\\n'",
         "        f'Chunks:\\n{chunks_txt}\\n\\nGraph facts:\\n{pack[\"graph_context\"]}\\n\\n'",
@@ -1287,7 +1261,7 @@ cells.append(
         "",
         "1. Parse **`data/dbpedia_maritime_corpus.txt`** (or `dbpedia_course_corpus.txt`).",
         "2. `MERGE` new `Chunk` nodes and optional `MENTIONS` edges.",
-        "3. `Neo4jVector.add_documents()` or rebuild the index.",
+        "3. Rebuild `VectorStoreIndex` with new `TextNode` objects.",
         "",
         "See **`data/DATASETS.md`** for licenses and rebuild scripts.",
         "",
@@ -1330,17 +1304,17 @@ cells.append(
         "",
         "# 3.3 Text to Cypher",
         "",
-        "### How `GraphCypherQAChain` works",
+        "### How `TextToCypherRetriever` works",
         "",
         "```text",
         "User question",
-        "    → LLM + graph.schema → Cypher query",
+        "    → LLM + graph_store schema → Cypher query",
         "    → Execute on Neo4j → result rows",
-        "    → LLM + rows + question → natural language answer",
+        "    → Format rows into retrieved TextNode context",
         "```",
         "",
-        "This is **not** magic — quality depends on schema clarity, model size, and question phrasing.",
-        "Enable `return_intermediate_steps=True` to debug generated Cypher in the notebook.",
+        "Wrap the retriever in a **`RetrieverQueryEngine`** to add a final natural-language answer step.",
+        "Quality depends on schema clarity, model size, and question phrasing.",
     )
 )
 
@@ -1350,7 +1324,7 @@ cells.append(
         "",
         "Before building the chain, we:",
         "",
-        "1. **`refresh_schema()`** — update `neo4j_graph.schema` for the LLM.",
+        "1. **`get_schema_str()`** — preview schema text sent to the LLM.",
         "2. **Count nodes** by label — confirm `LlamaIndexLab` data is present.",
         "",
         "If counts are zero, re-run Section **3.1.3**.",
@@ -1359,9 +1333,9 @@ cells.append(
 
 cells.append(
     code(
-        "# 3.3.1 — Refresh schema and inspect labels used by the lab",
-        "neo4j_graph.refresh_schema()",
-        "label_rows = neo4j_graph.query(",
+        "# 3.3.1 — Schema and label inspection",
+        "print('Schema preview:', graph_store.get_schema_str()[:600], '...')",
+        "label_rows = run_cypher(",
         "    '''",
         "    MATCH (n:LlamaIndexLab)",
         "    RETURN DISTINCT labels(n) AS labels, count(*) AS cnt",
@@ -1376,37 +1350,44 @@ cells.append(
 
 cells.append(
     md(
-        "## 3.3.2 Cypher QA chain",
+        "## 3.3.2 Text-to-Cypher retriever + query engine",
         "",
-        "### `allow_dangerous_requests=True`",
+        "### Safety note",
         "",
-        "Generated Cypher could theoretically **write** data. Neo4j's integration requires you to",
-        "opt in explicitly. This course uses a **disposable lab graph** only.",
+        "Generated Cypher could theoretically **write** data. This course uses a **disposable lab graph** only.",
+        "In production: read-only DB roles, `cypher_validator`, and query allow-lists.",
         "",
-        "### Input / output",
+        "### Components",
         "",
-        "| Key | Content |",
-        "|-----|---------|",
-        "| Input `query` | User question in English |",
-        "| Output `result` | Final natural language answer |",
-        "| Output `intermediate_steps` | Generated Cypher and DB records (when enabled) |",
+        "| Component | Role |",
+        "|-----------|------|",
+        "| `TextToCypherRetriever` | NL → Cypher → graph rows as nodes |",
+        "| `RetrieverQueryEngine` | Retriever + `Settings.llm` → final answer |",
     )
 )
 
 cells.append(
     code(
-        "# 3.3.2 — GraphCypherQAChain",
-        "from langchain_neo4j import GraphCypherQAChain",
+        "# 3.3.2 — TextToCypherRetriever + RetrieverQueryEngine",
+        "from llama_index.core.indices.property_graph import TextToCypherRetriever",
+        "from llama_index.core.query_engine import RetrieverQueryEngine",
+        "from llama_index.core.prompts import PromptTemplate",
         "",
-        "neo4j_graph.refresh_schema()",
-        "CYPHER_QA_CHAIN = GraphCypherQAChain.from_llm(",
-        "    llm=llm,",
-        "    graph=neo4j_graph,",
-        "    verbose=True,",
-        "    allow_dangerous_requests=True,",
-        "    return_intermediate_steps=True,",
+        "DEFAULT_RESPONSE_TEMPLATE = (",
+        "    'Generated Cypher query:\\n{query}\\n\\nCypher Response:\\n{response}'",
         ")",
-        "print('GraphCypherQAChain ready.')",
+        "",
+        "text_to_cypher_retriever = TextToCypherRetriever(",
+        "    graph_store,",
+        "    llm=Settings.llm,",
+        "    text_to_cypher_template=PromptTemplate(graph_store.text_to_cypher_template),",
+        "    response_template=DEFAULT_RESPONSE_TEMPLATE,",
+        ")",
+        "CYPHER_QUERY_ENGINE = RetrieverQueryEngine.from_args(",
+        "    text_to_cypher_retriever,",
+        "    llm=Settings.llm,",
+        ")",
+        "print('TextToCypherRetriever + query engine ready.')",
     )
 )
 
@@ -1414,17 +1395,22 @@ cells.append(
     md(
         "### 3.3.2b — Example question",
         "",
-        "Watch **verbose** output: you should see a `MATCH` on `Port` / `Country` labels.",
-        "If Cypher fails, compare the query to the graph in Browser and adjust seed data or model.",
+        "The response should mention ports in the **Netherlands** and **Singapore**.",
+        "If Cypher fails, inspect retrieved node text (contains generated query) and compare with Browser.",
     )
 )
 
 cells.append(
     code(
         "# 3.3.2b — Ask a natural language question",
-        "qa_result = CYPHER_QA_CHAIN.invoke({'query': 'Which ports are located in the Netherlands or Singapore?'})",
-        "print('Answer:', qa_result.get('result'))",
-        "print('Intermediate steps:', qa_result.get('intermediate_steps'))",
+        "qa_response = CYPHER_QUERY_ENGINE.query(",
+        "    'Which ports are located in the Netherlands or Singapore?'",
+        ")",
+        "print('Answer:', qa_response)",
+        "retrieved_ctx = text_to_cypher_retriever.retrieve(",
+        "    'Which ports are located in the Netherlands or Singapore?'",
+        ")",
+        "print('Retriever context preview:', retrieved_ctx[0].text[:500] if retrieved_ctx else '(empty)')",
     )
 )
 
@@ -1432,32 +1418,35 @@ cells.append(
     md(
         "## 3.3.3 Customize Cypher generation",
         "",
-        "Advanced options on `GraphCypherQAChain.from_llm`:",
+        "Key knobs on **`TextToCypherRetriever`**:",
         "",
         "| Option | Effect |",
         "|--------|--------|",
-        "| `cypher_llm` / `qa_llm` | Different models for query vs answer |",
-        "| `cypher_prompt` / `qa_prompt` | Override default prompts |",
-        "| `include_types` | Limit schema to listed node/rel types |",
-        "| `exclude_types` | Omit noisy labels from schema |",
-        "| `validate_cypher` | Extra validation step (package version dependent) |",
+        "| `llm` | Model for Cypher generation (defaults to `Settings.llm`) |",
+        "| `text_to_cypher_template` | Prompt with `{schema}` and `{question}` |",
+        "| `response_template` | How Cypher results become node text |",
+        "| `cypher_validator` | Callable to reject unsafe / invalid Cypher |",
         "",
-        "Below we restrict to maritime-related types so the LLM ignores unrelated labels in the DB.",
+        "Below we add a lab hint so the LLM prefers **`LlamaIndexLab`** nodes.",
     )
 )
 
 cells.append(
     code(
-        "# 3.3.3 — Chain with include_types filter (maritime entities only)",
-        "filtered_chain = GraphCypherQAChain.from_llm(",
-        "    llm=llm,",
-        "    graph=neo4j_graph,",
-        "    include_types=['Port', 'Organization', 'Canal', 'Country', 'Chunk'],",
-        "    verbose=False,",
-        "    allow_dangerous_requests=True,",
+        "# 3.3.3 — Custom text-to-Cypher template (lab scope hint)",
+        "LAB_CYPHER_TEMPLATE = (",
+        "    graph_store.text_to_cypher_template",
+        "    + '\\n\\nOnly use nodes labeled LlamaIndexLab from this course lab.'",
         ")",
-        "filtered_answer = filtered_chain.invoke({'query': 'What route does Maersk use?'})",
-        "print(filtered_answer.get('result', filtered_answer))",
+        "filtered_retriever = TextToCypherRetriever(",
+        "    graph_store,",
+        "    llm=Settings.llm,",
+        "    text_to_cypher_template=PromptTemplate(LAB_CYPHER_TEMPLATE),",
+        "    response_template=DEFAULT_RESPONSE_TEMPLATE,",
+        ")",
+        "filtered_engine = RetrieverQueryEngine.from_args(filtered_retriever, llm=Settings.llm)",
+        "filtered_answer = filtered_engine.query('What route does Maersk use?')",
+        "print(filtered_answer)",
     )
 )
 
@@ -1470,44 +1459,26 @@ cells.append(
         "- Downstream RAG merges **vector chunks** + **Cypher result text**.",
         "- Agents call a retriever instead of a full QA chain when they only need **context**.",
         "",
-        "We subclass LlamaIndex **`BaseRetriever`** and return one `TextNode` whose text is the chain answer",
-        "(metadata stores a truncated `intermediate_steps` string for debugging).",
+        "`TextToCypherRetriever.retrieve()` already returns **`NodeWithScore`** objects.",
+        "Downstream RAG can merge these nodes with vector chunks before synthesis.",
     )
 )
 
 cells.append(
     code(
-        "# 3.3.4a — Text-to-Cypher as a LlamaIndex retriever",
-        "from llama_index.core.retrievers import BaseRetriever as LIBaseRetriever",
-        "from llama_index.core.schema import NodeWithScore, QueryBundle, TextNode",
-        "",
-        "",
-        "class CypherContextLlamaRetriever(LIBaseRetriever):",
-        "    \"\"\"Returns GraphCypherQAChain output as TextNodes for downstream RAG.\"\"\"",
-        "",
-        "    def __init__(self, chain):",
-        "        self._chain = chain",
-        "        super().__init__()",
-        "",
-        "    def _retrieve(self, query_bundle: QueryBundle) -> list[NodeWithScore]:",
-        "        out = self._chain.invoke({'query': query_bundle.query_str})",
-        "        steps = out.get('intermediate_steps') or []",
-        "        context = out.get('result', '')",
-        "        node = TextNode(text=str(context), metadata={'intermediate_steps': str(steps)[:2000]})",
-        "        return [NodeWithScore(node=node, score=1.0)]",
-        "",
-        "",
-        "cypher_retriever = CypherContextLlamaRetriever(CYPHER_QA_CHAIN)",
-        "cypher_nodes = cypher_retriever.retrieve('Which organization operates in Rotterdam?')",
-        "print(cypher_nodes[0].node.text[:400])",
+        "# 3.3.4a — Text-to-Cypher as a retriever (direct)",
+        "cypher_nodes = text_to_cypher_retriever.retrieve('Which organization operates in Rotterdam?')",
+        "print('Retrieved nodes:', len(cypher_nodes))",
+        "if cypher_nodes:",
+        "    print(cypher_nodes[0].text[:500])",
     )
 )
 
 cells.append(
     md(
-        "### 3.3.4b — Re-run the agent with a live `CYPHER_QA_CHAIN`",
+        "### 3.3.4b — Re-run the agent with a live `CYPHER_QUERY_ENGINE`",
         "",
-        "Now `ask_graph_in_natural_language` can call the QA chain. Expect verbose ReAct steps",
+        "Now `ask_graph_in_natural_language` can call the query engine. Expect verbose ReAct steps",
         "and a final answer mentioning **Maersk** and **Rotterdam**.",
         "",
         "**Note:** This may take 30–90 seconds on local Ollama — normal for multi-step LLM calls.",
@@ -1516,7 +1487,7 @@ cells.append(
 
 cells.append(
     code(
-        "# 3.3.4b — Re-run agent now that CYPHER_QA_CHAIN exists",
+        "# 3.3.4b — Re-run agent now that CYPHER_QUERY_ENGINE exists",
         "response = agent.query('Which organization operates in the Port of Rotterdam?')",
         "print(response)",
     )
@@ -1530,11 +1501,11 @@ cells.append(
         "",
         "| Topic | Key API | What you practiced |",
         "|-------|---------|-------------------|",
-        "| Neo4j + LlamaIndex (bridge) | `Neo4jGraph` | Connect, query, refresh schema |",
+        "| Neo4j + LlamaIndex | `Neo4jPropertyGraphStore` | Connect, schema, graph queries |",
         "| Lab data | Cypher `CREATE` / `MERGE` | Maritime graph + chunks + `MENTIONS` |",
-        "| Vector RAG | `Neo4jVector` + `RetrieverQueryEngine` | Embed, index, retrieve, answer |",
+        "| Vector RAG | `Neo4jVectorStore` + `VectorStoreIndex` | Embed, index, retrieve, answer |",
         "| GraphRAG | Custom expansion + `Settings.llm` | Vectors + relationship context |",
-        "| Text to Cypher | `GraphCypherQAChain` | NL → Cypher → NL (Cypher QA chain) |",
+        "| Text to Cypher | `TextToCypherRetriever` | NL → Cypher → context → answer |",
         "| Agent | `ReActAgent` + `FunctionTool` | Tool choice over graph |",
         "",
         "### Troubleshooting quick reference",
@@ -1544,22 +1515,22 @@ cells.append(
         "| Neo4j connection error | `NEO4J_SETUP.md`, instance running, `.env` password |",
         "| Ollama runner error | `ollama serve`, `ollama pull`, `LLM_MODEL_SETUP.md` |",
         "| Empty vector results | Re-run 3.1.3c and 3.2.1c |",
-        "| Bad / invalid Cypher | `refresh_schema()`, larger model, `include_types` |",
+        "| Bad / invalid Cypher | `get_schema_str()`, larger model, custom template |",
         "| Agent parsing error | Re-run with `verbose=True`; try `llama3.1:8b` |",
         "",
         "### Next steps",
         "",
         "- **`Module_8_Building_Knowledge_Graphs_with_LLMs.ipynb`** — build graphs from unstructured text with LLMs.",
         "- **`Module_8_Using_Knowledge_Graph_with_LangChain.ipynb`** — same lab topics with LangChain orchestration.",
-        "- Explore native **`TextToCypherRetriever`** + `Neo4jPropertyGraphStore` (see [Neo4j Labs — LlamaIndex](https://neo4j.com/labs/genai-ecosystem/genai-frameworks/llamaindex-agents/)).",
-        "- Add corpus chunks (Section 3.2.4) and tune `k`, embeddings, and prompts.",
-        "- Production hardening: read-only DB user, Cypher validation, observability on `intermediate_steps`.",
+        "- Combine **`VectorContextRetriever`** + **`TextToCypherRetriever`** for full GraphRAG (see [Neo4j Labs](https://neo4j.com/labs/genai-ecosystem/genai-frameworks/llamaindex-agents/)).",
+        "- Add corpus chunks (Section 3.2.4) and tune `similarity_top_k`, embeddings, and prompts.",
+        "- Production hardening: read-only DB user, `cypher_validator`, observability on generated Cypher.",
         "",
         "### References",
         "",
-        "- [LlamaIndex + Neo4j (Neo4j Labs)](https://developers.llamaindex.ai/python/framework/)",
+        "- [Property Graph Index guide](https://developers.llamaindex.ai/python/framework/module_guides/indexing/lpg_index_guide/)",
+        "- [Neo4j vector store (LlamaIndex)](https://developers.llamaindex.ai/python/framework/integrations/vector_stores/neo4jvectordemo/)",
         "- [Neo4j GenAI — LlamaIndex](https://neo4j.com/labs/genai-ecosystem/genai-frameworks/llamaindex-agents/)",
-        "- [`langchain-neo4j` on PyPI](https://pypi.org/project/langchain-neo4j/)",
     )
 )
 

@@ -1,5 +1,20 @@
 # Module 8 — Datasets
 
+## Logistics supply chain (warehouse / inventory lab)
+
+| File | Rows | Use case |
+|------|------|----------|
+| `logistics-supply-chain/dynamic_supply_chain_logistics_dataset.csv` | 32,065 | **`Module_8_Exploring_Logistics_and_Supply_Chain_Dataset.ipynb`** — beginner EDA & field guide |
+| | | **`Module_8_Warehouse_Inventory_Management_with_Knowledge_Graphs.ipynb`** — weekly warehouse inventory KG |
+
+- Source: [Kaggle — Logistics and supply chain dataset](https://www.kaggle.com/datasets/datasetengineer/logistics-and-supply-chain-dataset) (CC0-1.0)
+- Download with Kaggle CLI:
+
+```bash
+kaggle datasets download -d datasetengineer/logistics-and-supply-chain-dataset \
+  -p Module_8/data/logistics-supply-chain --unzip
+```
+
 ## Recommended for the notebook
 
 | File | Entries | Size | Use case |

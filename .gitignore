@@ -1,7 +1,15 @@
 .env
+__pycache__/
+*.pyc
+
+# Module 5 — large/generated artifacts (exceed GitHub 100 MB limit or are reproducible)
 Module_5/data/
 Module_5/output.zip
+Module_5/part3_labeled_images.zip
+Module_5/training_result.zip
+Module_5/outputs/
 Module_5/pretrained_yolov11/
 Module_5/runs/
+
 Module_8/.env
 Module_8/neo4j-course-data/

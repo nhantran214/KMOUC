@@ -1,0 +1,13 @@
+severity,flag_code,entity_key,message
+HIGH,FORBIDDEN_CLASS_IN_ZONE,Pneumatic-Diaphragm Gate Valve,Class outside zone whitelist.
+HIGH,FORBIDDEN_CLASS_IN_ZONE,Centrifugal Pump,Class outside zone whitelist.
+HIGH,FORBIDDEN_CLASS_IN_ZONE,Pneumatic-Diaphragm Gate Valve,Class outside zone whitelist.
+HIGH,FORBIDDEN_CLASS_IN_ZONE,Butterfly Valve,Class outside zone whitelist.
+HIGH,FORBIDDEN_CLASS_IN_ZONE,Pneumatic-Diaphragm Gate Valve,Class outside zone whitelist.
+HIGH,FORBIDDEN_CLASS_IN_ZONE,Gear Pump,Class outside zone whitelist.
+HIGH,FORBIDDEN_CLASS_IN_ZONE,Hand Operated Gate Valve,Class outside zone whitelist.
+HIGH,FORBIDDEN_CLASS_IN_ZONE,Gear Pump,Class outside zone whitelist.
+HIGH,FORBIDDEN_CLASS_IN_ZONE,Pneumatic-Diaphragm Gate Valve,Class outside zone whitelist.
+HIGH,FORBIDDEN_CLASS_IN_ZONE,Pneumatic-Diaphragm Gate Valve,Class outside zone whitelist.
+HIGH,FORBIDDEN_CLASS_IN_ZONE,Hand Operated Gate Valve,Class outside zone whitelist.
+HIGH,FORBIDDEN_CLASS_IN_ZONE,Gear Pump,Class outside zone whitelist.

@@ -1,0 +1,4 @@
+severity,flag_code,entity_key,message
+MEDIUM,MISSING_REQUIRED_TAG,Interconnection References,Missing extracted tag.
+MEDIUM,MISSING_REQUIRED_TAG,ci-1Ji,Missing extracted tag.
+MEDIUM,MISSING_REQUIRED_TAG,REALPARS,Missing extracted tag.

@@ -1,0 +1,6 @@
+pressure_bar,temperature_c,confidence,drawing_no
+False,False,False,False
+True,False,False,False
+False,True,False,False
+False,False,True,False
+False,False,False,True

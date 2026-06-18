@@ -1,0 +1,9 @@
+question,ground_truth,needs_graph
+Which port is the largest in Europe according to the lab data?,The Port of Rotterdam is the largest port in Europe.,False
+Which country is the Port of Singapore located in?,The Port of Singapore is located in Singapore.,True
+Which organization operates in the Port of Rotterdam?,Maersk operates in the Port of Rotterdam.,True
+What route does Maersk use according to the graph?,Maersk uses the Panama Canal route.,True
+How is Maersk connected to the Panama Canal?,Maersk is connected to the Panama Canal through a USES_ROUTE relationship.,True
+What do the Panama Canal connect?,The Panama Canal connects the Atlantic and Pacific oceans.,False
+Which port is described as a leading transshipment hub in Southeast Asia?,The Port of Singapore is a leading transshipment hub in Southeast Asia.,False
+What country is Maersk associated with in the lab graph?,Maersk is a Danish shipping company (Denmark).,False

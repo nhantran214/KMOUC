@@ -1,0 +1,2 @@
+severity,flag_code,entity_key,message
+HIGH,DUPLICATE_TAG_MAPPING,V-101,Tag mapped to multiple symbols.

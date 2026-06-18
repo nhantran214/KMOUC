@@ -1,0 +1,7 @@
+severity,flag_code,entity_key,message
+LOW,ASSOCIATION_DIRECTION_VIOLATION,ci-1Ji,Text on unexpected side.
+LOW,ASSOCIATION_DIRECTION_VIOLATION,Sample Point,Text on unexpected side.
+LOW,ASSOCIATION_DIRECTION_VIOLATION,Valve,Text on unexpected side.
+LOW,ASSOCIATION_DIRECTION_VIOLATION,Vale,Text on unexpected side.
+LOW,ASSOCIATION_DIRECTION_VIOLATION,Vahe,Text on unexpected side.
+LOW,ASSOCIATION_DIRECTION_VIOLATION,Rouary,Text on unexpected side.

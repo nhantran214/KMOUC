@@ -1,0 +1,2 @@
+{"ts": "2026-06-17T23:34:35.972473+00:00", "event": "qc_run", "records": 500, "issues": 282}
+{"ts": "2026-06-17T23:34:35.972633+00:00", "event": "sample_export", "path": "/home/ethan/newgen/KMOU_Course/Module_5/qc_dashboard_outputs/reports/qc_events.jsonl"}

@@ -1,0 +1,4 @@
+severity,flag_code,entity_key,message
+MEDIUM,UNDECLARED_ADDITION,FP-101,Tag appears only in current revision.
+MEDIUM,UNDECLARED_ADDITION,GV-101,Tag appears only in current revision.
+MEDIUM,UNDECLARED_ADDITION,PV-201,Tag appears only in current revision.

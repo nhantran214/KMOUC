@@ -1,0 +1,2 @@
+severity,flag_code,entity_key,message
+CRITICAL,DECOMMISSIONED_REFERENCE,V-102,Drawing references decommissioned equipment.

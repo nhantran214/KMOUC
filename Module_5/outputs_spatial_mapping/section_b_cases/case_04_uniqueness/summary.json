@@ -1,0 +1,6 @@
+{
+  "case_id": "CASE_04_UNIQUENESS",
+  "case_name": "One tag to one equipment uniqueness",
+  "evaluated_rows": 18,
+  "issue_count": 1
+}

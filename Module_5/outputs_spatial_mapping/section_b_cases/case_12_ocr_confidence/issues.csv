@@ -1,0 +1,7 @@
+severity,flag_code,entity_key,message
+LOW,LOW_OCR_CONFIDENCE_REVIEW_REQUIRED,ci-1Ji,OCR confidence below threshold.
+LOW,LOW_OCR_CONFIDENCE_REVIEW_REQUIRED,Xw,OCR confidence below threshold.
+LOW,LOW_OCR_CONFIDENCE_REVIEW_REQUIRED,Flow Direcions,OCR confidence below threshold.
+LOW,LOW_OCR_CONFIDENCE_REVIEW_REQUIRED,Valve,OCR confidence below threshold.
+LOW,LOW_OCR_CONFIDENCE_REVIEW_REQUIRED,Sanpl? Point,OCR confidence below threshold.
+LOW,LOW_OCR_CONFIDENCE_REVIEW_REQUIRED,Rouary,OCR confidence below threshold.

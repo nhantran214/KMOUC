@@ -1,0 +1,17 @@
+{
+  "pressure_bar": {
+    "min": 0,
+    "max": 300
+  },
+  "temperature_c": {
+    "min": -40,
+    "max": 350
+  },
+  "confidence": {
+    "min": 0,
+    "max": 1
+  },
+  "drawing_no": {
+    "non_empty": true
+  }
+}

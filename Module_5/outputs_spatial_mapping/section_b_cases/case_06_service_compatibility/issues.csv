@@ -1,0 +1,2 @@
+severity,flag_code,entity_key,message
+HIGH,SERVICE_TYPE_INCOMPATIBLE,PV-201,Service may be incompatible with symbol class.
